@@ -56,6 +56,8 @@ def about():
 @app.route('/contact/', methods=['POST', 'GET'])
 def contact():
     if request.method == 'POST':
+        if request.form['url'] != "":
+            return render_template('contact.html') #it's a bot!
         data_surname = request.form['surname']
         data_lastname = request.form['lastname']
         data_email = request.form['email']
@@ -65,7 +67,7 @@ def contact():
         new_dataset = Dataset(surname=data_surname, lastname=data_lastname, email=data_email, querytype=data_querytype, details=data_details)
         msg = Message(subject=data_surname + ": " + data_querytype + "   - carmenphotography.ch",
         sender=app.config.get("MAIL_USERNAME"),
-        #recipients=["<baettig.carmen@gmail.com"], # replace with your email for testing
+        recipients=["<baettig.carmen@gmail.com"], # replace with your email for testing
         html="\
             <h3>Anfrage: "+ data_querytype +"</h3>\
             <p>von: "+ data_surname + " " + data_lastname + "</p>\

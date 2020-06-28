@@ -264,6 +264,17 @@ nav li a {
   height: 10vh;
 }
 
+#url {
+  color: rgba(0, 0, 0, 0);
+  font-size: 1px;
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+#url::placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
 .contact .input {
   display: block;
   width: 100%;
