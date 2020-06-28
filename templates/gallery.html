@@ -1,0 +1,20 @@
+{% extends 'base.html'%} {%block head%} <title>carmen photography - gallery</title> {%endblock%} {%block nav%}
+<div class="subnav">
+  <div class="item wedding">
+    <a href="#">Wedding</a>
+  </div>
+  <div class="item people">
+    <a href="#">People</a>
+  </div>
+  <div class="item world">
+    <a href="#">World</a>
+  </div>
+</div>
+{%endblock%} {%block body%}
+
+<div class="gallery">
+  <!-- <div class="picture"></div> -->
+  <!-- <script src="./js/gallery.js"></script> -->
+  <script src="{{ url_for('static', filename='js/gallery.js')}}"></script>
+</div>
+{%endblock%}

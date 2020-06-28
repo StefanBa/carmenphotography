@@ -1,0 +1,16 @@
+{% extends 'base.html'%} {%block head%} <title>carmen photography - about</title> {%endblock%} {%block body%}
+<div class="about">
+  <div class="spacer"></div>
+  <div class="title">About me</div>
+  <div class="text">
+ 
+Besondere Momente in Bildern festhalten zu können, ist für mich immer eine grosse Freude. Diese Momente faszinieren mich, ob in Stimmungen der Natur, oder in Gesichtern, welche die einzigartigen Augenblicke ausdrücken, und sich so als wertvolle Erinnerungen bewahren lassen.<br><br>
+So habe ich als Hobby Freude daran gefunden, das Fotografieren an Hochzeiten zu übernehmen oder mit Fotoshootings für Familien oder Freunde im Bekanntenkreis eine günstigere alternative zu professionellen Fotoshootings zu bieten. Ich nehme auch Aufträge ausserhalb vom Bekanntenkreis an, sofern dies zeitlich möglich ist. Bei Interesse kannst du dich gerne mittels Kontaktformular melden.
+  </div>
+  <div class="spacer"></div>
+</div>
+</div>
+{%endblock%}
+<!-- <script src="./js/bodybackground.js" path="./images/carmenMobile.jpg"></script> -->
+    {%block script%}<script src="{{ url_for('static', filename='js/bodybackground.js')}}" path="{{ url_for('static', filename='images/carmen.jpg')}}"></script>{%endblock%}
+

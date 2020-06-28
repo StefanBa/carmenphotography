@@ -1,0 +1,30 @@
+{% extends 'base.html'%} {%block head%} <title>carmen photography - contact</title> {%endblock%} {%block body%}
+<div class="contact">
+  <div class="spacer"></div>
+  <form id="myform" action="/contact/" method="POST">
+    <!--id vom input gleich wie for vom label, deshalb spring cursor in input wenn man aufs label klickt-->
+    <input type="text" name="surname" class="input" id="surname" placeholder="Vorname" />
+    <br />
+    <input type="text" name="lastname" class="input" id="lastname" placeholder="Nachname" /><br />
+    <input type="email" name="email" class="input" id="email" placeholder="email@email.com" /><br />
+    <select name="querytype" class="input" id="querytype">
+      <option value="" disabled selected>Art der Anfrage</option>
+      <option value="wedding">Hochzeitsanlass</option>
+      <option value="family">Freunde- / Paare- / Familienshooting</option>
+      <option value="business">Firmenanlass</option>
+      <option value="other">andere</option> </select
+    ><br />
+    <textarea name="details" id="details" class="input" cols="40" rows="10" placeholder="Details über Anfrage"></textarea><br />
+    <input type="button" value="Anfragen" class="input submit" />
+  </form>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+</div>
+{%endblock%}
+<!-- <script src="./js/bodybackground.js" path="./images/nikon2.jpeg"></script> -->
+{%block script%}
+<script src="{{ url_for('static', filename='js/bodybackground.js')}}" path="{{ url_for('static', filename='images/nikon.jpeg')}}"></script>
+<script src="{{ url_for('static', filename='js/contact.js')}}"></script>
+{%endblock%}

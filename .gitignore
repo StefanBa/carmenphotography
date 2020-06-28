@@ -1,0 +1,7 @@
+c_base.db
+.vscode/
+__pycache__/
+static/fontawesome-free-5.13.0-web/
+static/gallery/
+static/Open_Sans
+venv/

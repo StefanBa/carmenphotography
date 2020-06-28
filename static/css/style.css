@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Marcellus+SC&family=Playfair+Display&family=Poiret+One&display=swap");
+
+/* scrolling: https://www.youtube.com/watch?time_continue=187&v=ln5BWnYMSQA&feature=emb_logo */
+
+/* font-family: 'Playfair Display', serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Marcellus SC', serif;*/
+
+:root {
+  --fontLogo: "Playfair Display", serif;
+  --fontLogoSize: 3vh;
+  --fontNav: "Julius Sans One", sans-serif;
+  --fontButton: "Open Sans", sans-serif;
+  --fontPage: "Open Sans", sans-serif;
+  --transitionNav: all 0.5s ease 0s;
+  --pageHeight: 130vh;
+  --navHeight: 10vh;
+  --navHeightMobile: 13vh;
+  --headerHeight: 8vh;
+  --footerHeight: 20vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-family: var(--fontButton);
+  -webkit-text-size-adjust: 100%;
+  /* -webkit-transform: translatez(0); */
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* transform-style: preserve-3d; */
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  /* border: 3px solid green; */
+  /* transform: translateZ(-1px) scale(2); */
+}
+
+.foreground {
+  width: 100vw;
+  /* border: 3px solid blue; */
+  /* transform: translateY(-4vh); */
+  z-index: 1;
+}
+
+header {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  height: var(--headerHeight);
+  /* border: 3px solid green; */
+  /* background: blue; */
+  /* opacity: 50%; */
+  z-index: 2;
+}
+
+nav {
+  width: 100vw;
+  height: var(--navHeight);
+  transition: var(--transitionNav);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  z-index: 2;
+  /* opacity: 50%; */
+  /* display: none; */
+  /* border: 3px solid blue; */
+}
+
+nav .side.logo {
+  /* width: 75vw; */
+  margin: 0 0 0 3vw;
+  /* border: 3px solid yellow; */
+}
+
+nav .side.bt {
+  width: 25vw;
+  margin: 0 3vw 0 0;
+  /* border: 3px solid yellow; */
+  display: none;
+}
+
+nav .side.bars {
+  justify-self: end;
+  width: var(--navHeight);
+  height: var(--navHeight);
+  text-align: center;
+  transition: var(--transitionNav);
+  /* border: 3px solid yellow; */
+}
+
+nav .side i {
+  color: grey;
+  font-size: calc(var(--navHeight) * 0.5);
+  transition: var(--transitionNav);
+  line-height: var(--navHeight);
+  vertical-align: middle;
+}
+
+nav .side a {
+  color: black;
+  text-decoration: none;
+  font-family: var(--fontLogo);
+  font-size: calc(var(--navHeight) * 0.25);
+  transition: var(--transitionNav);
+}
+
+nav ul {
+  /* border: 3px solid magenta; */
+  justify-self: center;
+  list-style: none;
+  position: absolute;
+  width: 0vw;
+  z-index: 2;
+  top: var(--navHeight);
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.925);
+  overflow-x: hidden;
+  transition: var(--transitionNav);
+}
+
+nav li a {
+  display: block;
+  width: var(--panelWidth);
+  height: var(--navHeightMobile);
+  line-height: var(--navHeightMobile);
+  padding: 0 3rem;
+  font-family: var(--fontNav);
+  font-size: calc(var(--navHeightMobile) * 0.2);
+  text-decoration: none;
+  color: black;
+  z-index: 2;
+  /* border: 3px solid green; */
+}
+
+.subnav {
+  width: 100vw;
+  height: var(--headerHeight);
+  display: flex;
+  justify-content: center;
+  position: -webkit-sticky; /* Safari*/
+  position: sticky;
+  top: var(--navHeight);
+  z-index: 1;
+  transition: var(--transitionNav);
+  overflow-y: hidden;
+  /* display: none; */
+  /* border: 1px solid black; */
+}
+
+.subnav .item {
+  background-color: rgba(255, 255, 255, 0.418);
+  height: var(--headerHeight);
+  width: 33.33vw;
+  text-align: center;
+  /* border: 1px solid black; */
+}
+
+.subnav a {
+  text-decoration: none;
+  color: black;
+  line-height: var(--headerHeight);
+  font-family: var(--fontNav);
+  font-size: calc(var(--navHeightMobile) * 0.2);
+  /* border: 3px solid yellow; */
+}
+
+.main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  /* border: 3px solid rgb(128, 94, 0); */
+}
+
+.home {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+  display: flex;
+  /* border: 3px solid red; */
+}
+
+.title {
+  font-family: var(--fontLogo);
+  transform: translateY(-5vh);
+  text-align: center;
+  font-size: 6rem;
+  color: white;
+  /* border: 3px solid black; */
+}
+
+.subtitle {
+  transform: translateY(-5vh);
+  font-size: 2rem;
+  font-family: var(--fontPage);
+  /* border: 3px solid black; */
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  /* border: 3px solid red; */
+}
+
+.about .spacer {
+  height: 60vh;
+  /* background: rgba(173, 212, 100, 0.418); */
+}
+
+.about .title {
+  font-size: 10rem;
+  font-family: var(--fontNav);
+  /* border: 3px solid red; */
+}
+
+.about .text {
+  /* height: 20vh; */
+  background: rgba(0, 0, 0, 0.76);
+  margin: 0 5vw;
+  padding: 5vw;
+  font-size: 2rem;
+  text-align: justify;
+  text-justify: inter-word;
+  /* border: 3px solid blue; */
+}
+
+.contact {
+  /* height: 70vh; */
+  padding: 0 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* background: url(./images/nikon2.jpeg) center/cover; */
+  /* border: 3px solid blue; */
+}
+
+.contact .spacer {
+  height: 10vh;
+}
+
+.contact .input {
+  display: block;
+  width: 100%;
+  font-size: 5vw;
+  background: rgba(0, 0, 0, 0.541);
+  color: white;
+  padding: 1vh;
+  border-radius: 2vh;
+  border: 2px solid white;
+}
+
+.contact .input::placeholder {
+  color: white;
+}
+
+.contact .submit {
+  width: 50%;
+  cursor: pointer;
+  /* background: white; */
+  /* color: black; */
+  border: 2px solid rgba(42, 159, 255, 0.719);
+}
+
+footer {
+  width: 100vw;
+  height: var(--footerHeight);
+  background: white;
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* opacity: 50%; */
+  /* border: 3px solid red; */
+}
+
+.socialbar {
+  width: 60vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  /* border: 3px solid blue; */
+}
+
+.socialbar a {
+  color: inherit;
+  /* border: 3px solid red; */
+  font-size: calc(var(--footerHeight) * 0.3);
+}
+
+@media screen and (min-width: 1081px) {
+  nav .side.logo {
+    width: 25vw;
+  }
+
+  nav .side a {
+    font-size: calc(var(--navHeight) * 0.3);
+  }
+
+  nav .side.bt {
+    display: block;
+  }
+
+  nav .side.bars {
+    display: none;
+  }
+
+  nav .side button {
+    float: right;
+    padding: 0.4vh 1.5vw;
+    border-radius: 2.4vh;
+    font-size: 1.1rem;
+    font-family: var(--fontButton);
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 1s ease 0.1s;
+  }
+
+  nav .side button:hover {
+    border: 2px solid black;
+  }
+
+  nav .side button:focus {
+    outline: 0 !important;
+  }
+  nav ul {
+    justify-self: center;
+    height: auto;
+    width: 44vw;
+    position: static;
+  }
+
+  nav li {
+    float: left;
+  }
+
+  nav li a {
+    width: 10vw;
+    height: auto;
+    text-align: center;
+    font-size: 1.1rem;
+    height: var(--navHeight);
+    line-height: var(--navHeight);
+    line-height: var(--navHeight);
+    transition: var(--transitionNav);
+  }
+
+  nav li a:hover {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width: 14vw;
+  }
+
+  .subnav .item {
+    width: 15vw;
+  }
+
+  .socialbar {
+    width: 20vw;
+  }
+
+  .about {
+    width: 45vw;
+    align-self: flex-end;
+    margin: 0 3vw;
+    /* border: 3px solid blue; */
+  }
+
+  .about .spacer {
+    height: 30vh;
+  }
+
+  .about .title {
+    font-size: 8vw;
+  }
+
+  .about .text {
+    margin: 3vw 0;
+    width: 33vw;
+    padding: 3vw;
+    font-size: 1.3rem;
+  }
+  .contact {
+    align-items: flex-start;
+  }
+
+  .contact .input {
+    font-size: 3vh;
+  }
+}
