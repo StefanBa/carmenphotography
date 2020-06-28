@@ -67,7 +67,7 @@ def contact():
         new_dataset = Dataset(surname=data_surname, lastname=data_lastname, email=data_email, querytype=data_querytype, details=data_details)
         msg = Message(subject=data_surname + ": " + data_querytype + "   - carmenphotography.ch",
         sender=app.config.get("MAIL_USERNAME"),
-        recipients=["<baettig.carmen@gmail.com"], # replace with your email for testing
+        # recipients=["<baettig.carmen@gmail.com"], # replace with your email for testing
         html="\
             <h3>Anfrage: "+ data_querytype +"</h3>\
             <p>von: "+ data_surname + " " + data_lastname + "</p>\
@@ -75,14 +75,13 @@ def contact():
             <p>"+ data_email +"</p>\
                 ")
         msg.add_recipient("stefanbaumann.b@gmail.com")
-        try:
-            db.session.add(new_dataset)
-            db.session.commit()
-
-            mail.send(msg)
-            return redirect('/thanks/')
-        except:
-            return 'There was an issue to add your request. Please try again.'
+        # try:
+        db.session.add(new_dataset)
+        db.session.commit()
+        mail.send(msg)
+        return redirect('/thanks/')
+        # except:
+            # return 'There was an issue to add your request. Please try again.'
     else:
         return render_template('contact.html')
 
