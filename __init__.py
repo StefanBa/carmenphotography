@@ -1,9 +1,9 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 from datetime import datetime
+import logging
 import os
-
 
 app = Flask(__name__)
 # four forwardslashes would be absolute path, three are relative
@@ -88,6 +88,12 @@ def contact():
 @app.route('/thanks/')
 def contact2():
     return render_template('thanks.html')
+
+@app.route('/update/', methods=['POST'])
+def update():
+    app.logger.warning(request)
+    return ("fun", 200, None)
+
 
 # @app.route('/', methods=['POST', 'GET'])
 # def index():
