@@ -92,7 +92,7 @@ def contact2():
 @app.route('/update/', methods=['POST'])
 def update():
     app.logger.warning(request)
-    os.system("cd /var/www/webApp/webApp/ & git pull cp master")
+    os.system("git pull cp master")
     return ("fun2", 200, None)
 
 
