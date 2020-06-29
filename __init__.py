@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 from datetime import datetime
 import logging
-import os
+import subprocess
 
 app = Flask(__name__)
 # four forwardslashes would be absolute path, three are relative
@@ -92,7 +92,7 @@ def contact2():
 @app.route('/update/', methods=['POST'])
 def update():
     app.logger.warning(request)
-    os.system("git pull cp master")
+    subprocess.check_output(['bash','-c', 'git pull cp master'])
     return ("fun2", 200, None)
 
 
