@@ -4,6 +4,7 @@ from flask_mail import Mail, Message
 from datetime import datetime
 import logging
 import subprocess
+import os
 
 app = Flask(__name__)
 # four forwardslashes would be absolute path, three are relative
@@ -92,6 +93,7 @@ def contact2():
 @app.route('/update/', methods=['POST'])
 def update():
     app.logger.warning(request)
+    os.chdir("/var/www/webApp/webApp/")
     subprocess.check_output(['bash','-c', 'git pull cp master'])
     return ("fun2", 200, None)
 
