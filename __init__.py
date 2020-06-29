@@ -94,7 +94,8 @@ def contact2():
 def update():
     app.logger.warning(request)
     os.chdir("/var/www/webApp/webApp/")
-    subprocess.check_output(['bash','-c', 'git pull cp master'])
+    os.system("git pull cp master")
+    #subprocess.check_output(['bash','-c', 'git pull cp master'])
     return ("fun2", 200, None)
 
 
