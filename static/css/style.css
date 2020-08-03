@@ -28,7 +28,7 @@ font-family: 'Marcellus SC', serif;*/
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 300;
   font-family: var(--fontPage);
   -webkit-text-size-adjust: 100%;
   /* -webkit-transform: translatez(0); */
@@ -175,7 +175,7 @@ nav li a {
   color: black;
   line-height: var(--headerHeight);
   font-family: var(--fontNav);
-  font-size: calc(var(--navHeightMobile) * 0.17);
+  font-size: calc(var(--navHeightMobile) * 0.16);
   /* border: 3px solid yellow; */
 }
 

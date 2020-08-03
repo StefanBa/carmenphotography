@@ -99,7 +99,6 @@ def update():
     #subprocess.check_output(['bash','-c', 'git pull cp master'])
     return ("fun2", 200, None)
 
-
 # @app.route('/', methods=['POST', 'GET'])
 # def index(): 
 #     if request.method == 'POST':
