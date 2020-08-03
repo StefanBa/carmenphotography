@@ -93,8 +93,9 @@ def contact2():
 @app.route('/update/', methods=['POST'])
 def update():
     app.logger.warning(request)
-    os.chdir("/var/www/webApp/webApp/")
-    os.system("git pull cp master")
+    os.system("sudo /home/ubuntu/Desktop/gitpull.sh")
+    #os.chdir("/var/www/webApp/webApp/")
+    #os.system("git pull cp master")
     #subprocess.check_output(['bash','-c', 'git pull cp master'])
     return ("fun2", 200, None)
 
