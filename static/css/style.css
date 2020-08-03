@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Marcellus+SC&family=Playfair+Display&family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;300;400&family=Roboto+Mono:wght@100;200;300&display=swap");
 
 /* scrolling: https://www.youtube.com/watch?time_continue=187&v=ln5BWnYMSQA&feature=emb_logo */
 
@@ -9,11 +11,11 @@ font-family: 'Julius Sans One', sans-serif;
 font-family: 'Marcellus SC', serif;*/
 
 :root {
-  --fontLogo: "Playfair Display", serif;
-  --fontLogoSize: 3vh;
-  --fontNav: "Julius Sans One", sans-serif;
-  --fontButton: "Open Sans", sans-serif;
-  --fontPage: "Open Sans", sans-serif;
+  --fontLogo: "Playfair Display", sans-serif;
+  --fontPage: "Encode Sans", sans-serif;
+  /* --fontPage: "Roboto Mono", sans-serif; */
+  --fontNav: var(--fontPage);
+  /* --fontNav: "Open Sans", sans-serif; */
   --transitionNav: all 0.5s ease 0s;
   --pageHeight: 130vh;
   --navHeight: 10vh;
@@ -27,7 +29,7 @@ font-family: 'Marcellus SC', serif;*/
   margin: 0;
   padding: 0;
   font-weight: 400;
-  font-family: var(--fontButton);
+  font-family: var(--fontPage);
   -webkit-text-size-adjust: 100%;
   /* -webkit-transform: translatez(0); */
 }
@@ -138,7 +140,7 @@ nav li a {
   line-height: var(--navHeightMobile);
   padding: 0 3rem;
   font-family: var(--fontNav);
-  font-size: calc(var(--navHeightMobile) * 0.2);
+  font-size: calc(var(--navHeightMobile) * 0.17);
   text-decoration: none;
   color: black;
   z-index: 2;
@@ -173,7 +175,7 @@ nav li a {
   color: black;
   line-height: var(--headerHeight);
   font-family: var(--fontNav);
-  font-size: calc(var(--navHeightMobile) * 0.2);
+  font-size: calc(var(--navHeightMobile) * 0.17);
   /* border: 3px solid yellow; */
 }
 
@@ -208,7 +210,6 @@ nav li a {
 .subtitle {
   transform: translateY(-5vh);
   font-size: 2rem;
-  font-family: var(--fontPage);
   /* border: 3px solid black; */
 }
 
@@ -316,7 +317,6 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   /* border: 3px solid blue; */
 }
 
@@ -348,7 +348,6 @@ footer {
     padding: 0.4vh 1.5vw;
     border-radius: 2.4vh;
     font-size: 1.1rem;
-    font-family: var(--fontButton);
     background: none;
     border: 2px solid white;
     cursor: pointer;
@@ -377,7 +376,7 @@ footer {
     width: 10vw;
     height: auto;
     text-align: center;
-    font-size: 1.1rem;
+    padding: 0 0;
     height: var(--navHeight);
     line-height: var(--navHeight);
     line-height: var(--navHeight);
