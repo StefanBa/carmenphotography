@@ -5,20 +5,12 @@ from datetime import datetime
 import logging
 import subprocess
 import os
+import mailconfig
 
 app = Flask(__name__)
 # four forwardslashes would be absolute path, three are relative
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///c_base.db'
 db = SQLAlchemy(app)
-
-mail_settings = {
-    "MAIL_SERVER": 'smtp.gmail.com',
-    "MAIL_PORT": 465,
-    "MAIL_USE_TLS": False,
-    "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": 'carmenphotography.donotreply@gmail.com',
-    "MAIL_PASSWORD": 'carmenphotography67239'
-}
 
 category =	{
   "wedding": "Hochzeitsanlass",
@@ -26,7 +18,8 @@ category =	{
   "business": "Firmenanlass",
   "other": "generelles Shooting"
 }
-
+mail_settings = mailconfig.mail_settings
+mail_recipients = mailconfig.mail_recipients
 app.config.update(mail_settings)
 mail = Mail(app)
 
@@ -68,14 +61,14 @@ def contact():
         new_dataset = Dataset(surname=data_surname, lastname=data_lastname, email=data_email, querytype=data_querytype, details=data_details)
         msg = Message(subject=data_surname + ": " + data_querytype + "   - carmenphotography.ch",
         sender=app.config.get("MAIL_USERNAME"),
-        recipients=["<baettig.carmen@gmail.com"], # replace with your email for testing
+        recipients=[mail_recipients[0]], # replace with your email for testing
         html="\
             <h3>Anfrage: "+ data_querytype +"</h3>\
             <p>von: "+ data_surname + " " + data_lastname + "</p>\
             <p>"+ data_details +"</p>\
             <p>"+ data_email +"</p>\
                 ")
-        msg.add_recipient("stefanbaumann.b@gmail.com")
+        msg.add_recipient(mail_recipients[1])
         try:
             db.session.add(new_dataset)
             db.session.commit()
@@ -94,52 +87,7 @@ def contact2():
 def update():
     app.logger.warning(request)
     os.system("sudo /home/ubuntu/Desktop/gitpull.sh")
-    #os.chdir("/var/www/webApp/webApp/")
-    #os.system("git pull cp master")
-    #subprocess.check_output(['bash','-c', 'git pull cp master'])
-    return ("fun2", 200, None)
-
-# @app.route('/', methods=['POST', 'GET'])
-# def index(): 
-#     if request.method == 'POST':
-#         task_content = request.form['content']
-#         new_task = ToDo(content=task_content)
-#         try:
-#             db.session.add(new_task)
-#             db.session.commit()
-#             return redirect('/')
-#         except:
-#             return 'There was an issue adding your task'
-#     else:
-#         tasks = ToDo.query.order_by(ToDo.date_created).all()
-#         return render_template('index.html', tasks=tasks)
-
-
-# @app.route('/delete/<int:id>')
-# def delete(id):
-#     task_to_delete = ToDo.query.get_or_404(id)
-#     try:
-#         db.session.delete(task_to_delete)
-#         db.session.commit()
-#         return redirect('/')
-#     except:
-#         return 'There was a problem delting your task'
-
-
-# @app.route('/update/<int:id>', methods=['POST', 'GET'])
-# def update(id):
-#     task = ToDo.query.get_or_404(id)
-#     if request.method == 'POST':
-#         task.content = request.form['content']
-
-#         try:
-#             db.session.commit()
-#             return redirect('/')
-#         except:
-#             return 'There was an issue updating your task'
-#     else:
-#         return render_template('update.html', task=task)
-
+    return ("webhook worked fine", 200, None)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,4 +1,6 @@
 c_base.db
+mailconfig.py
+samplecode.py
 .vscode/
 __pycache__/
 static/gallery/
