@@ -19,7 +19,7 @@ category =	{
   "business": "Firmenanlass",
   "other": "generelles Shooting"
 }
-app.logger.warning(test.test)
+app.logger.warning(mailconfigs.test)
 mail_settings = mailconfig.mail_settings
 mail_recipients = mailconfig.mail_recipients
 app.config.update(mail_settings)
