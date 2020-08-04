@@ -5,8 +5,8 @@ from datetime import datetime
 import logging
 import subprocess
 import os
-import mailconfigs
-import mailconfig
+import modules.mailconfigs
+import modules.mailconfig
 
 app = Flask(__name__)
 # four forwardslashes would be absolute path, three are relative
@@ -19,9 +19,9 @@ category =	{
   "business": "Firmenanlass",
   "other": "generelles Shooting"
 }
-app.logger.warning(mailconfigs.test)
-mail_settings = mailconfig.mail_settings
-mail_recipients = mailconfig.mail_recipients
+app.logger.warning(modules.mailconfigs.test)
+mail_settings = modules.mailconfig.mail_settings
+mail_recipients = modules.mailconfig.mail_recipients
 app.config.update(mail_settings)
 mail = Mail(app)
 
