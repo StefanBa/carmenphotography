@@ -7,6 +7,7 @@ from datetime import datetime
 import logging
 import subprocess
 import os
+import traceback
 import mailconfig
 
 app = Flask(__name__)
@@ -15,10 +16,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///c_base.db'
 db = SQLAlchemy(app)
 
 category =	{
-  "wedding": "Hochzeitsanlass",
-  "family": "Freunde- / Paare- / Familienshooting",
-  "business": "Firmenanlass",
-  "other": "generelles Shooting"
+    "wedding": "Hochzeitsanlass",
+    "family": "Freunde- / Paare- / Familienshooting",
+    "business": "Firmenanlass",
+    "other": "generelles Shooting"
 }
 
 mail_settings = mailconfig.mail_settings
@@ -78,6 +79,7 @@ def contact():
             mail.send(msg)
             return redirect('/thanks/')
         except:
+            app.logger.warning(traceback.format_exc())
             return 'There was an issue to add your request. Please try again.'
     else:
         return render_template('contact.html')
@@ -88,7 +90,7 @@ def contact2():
 
 @app.route('/update/', methods=['POST'])
 def update():
-    app.logger.warning(request)
+    app.logger.info(request)
     os.system("sudo /home/ubuntu/Desktop/gitpull.sh")
     return ("webhook", 200, None)
 
