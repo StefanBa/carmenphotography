@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, "/var/www/webApp/webApp") #else my mailconfig module doesn't get found for some reason
+
 from flask import Flask, render_template, url_for, request, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
@@ -5,8 +8,7 @@ from datetime import datetime
 import logging
 import subprocess
 import os
-import modules.mailconfigs
-import modules.mailconfig
+import mailconfig
 
 app = Flask(__name__)
 # four forwardslashes would be absolute path, three are relative
@@ -19,9 +21,9 @@ category =	{
   "business": "Firmenanlass",
   "other": "generelles Shooting"
 }
-app.logger.warning(modules.mailconfigs.test)
-mail_settings = modules.mailconfig.mail_settings
-mail_recipients = modules.mailconfig.mail_recipients
+
+mail_settings = mailconfig.mail_settings
+mail_recipients = mailconfig.mail_recipients
 app.config.update(mail_settings)
 mail = Mail(app)
 
