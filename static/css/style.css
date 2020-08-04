@@ -326,6 +326,19 @@ footer {
   font-size: calc(var(--footerHeight) * 0.3);
 }
 
+.copyrightbar li {
+  display: inline-block;
+}
+
+.copyrightbar li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logofoot {
+  font-family: var(--fontLogo);
+}
+
 @media screen and (min-width: 1081px) {
   nav .side.logo {
     width: 25vw;
