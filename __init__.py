@@ -21,6 +21,7 @@ category =	{
 }
 mail_settings = mailconfig.mail_settings
 mail_recipients = mailconfig.mail_recipients
+testing = test.test
 app.config.update(mail_settings)
 mail = Mail(app)
 
