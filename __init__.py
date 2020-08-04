@@ -5,7 +5,7 @@ from datetime import datetime
 import logging
 import subprocess
 import os
-import test
+import mailconfigs
 import mailconfig
 
 app = Flask(__name__)
