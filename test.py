@@ -1,1 +1,1 @@
-test = 0
+test = "this is a testing phrase"
