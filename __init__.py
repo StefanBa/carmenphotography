@@ -1,6 +1,5 @@
 import sys
 sys.path.insert(0, "/var/www/webApp/webApp") #else my mailconfig module doesn't get found for some reason
-
 from flask import Flask, render_template, url_for, request, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
