@@ -90,7 +90,7 @@ def contact2():
 def update():
     app.logger.warning(request)
     os.system("sudo /home/ubuntu/Desktop/gitpull.sh")
-    return ("webhook worked fine", 200, None)
+    return ("good", 200, None)
 
 if __name__ == "__main__":
     app.run(debug=True)
