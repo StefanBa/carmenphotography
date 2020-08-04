@@ -1,4 +1,5 @@
 import sys
+import subprocess
 sys.path.insert(0, "/var/www/webApp/webApp") #else my mailconfig module doesn't get found for some reason
 from flask import Flask, render_template, url_for, request, redirect, request
 from flask_sqlalchemy import SQLAlchemy
@@ -91,7 +92,8 @@ def contact2():
 @app.route('/update/', methods=['POST'])
 def update():
     app.logger.info(request)
-    os.system("sudo /home/ubuntu/Desktop/gitpull.sh")
+    # os.system("sudo /home/ubuntu/Desktop/gitpull.sh")
+    subprocess.Popen(["sudo /home/ubuntu/Desktop/gitpull.sh"])
     return ("webhook", 200, None)
 
 if __name__ == "__main__":
