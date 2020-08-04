@@ -93,7 +93,7 @@ def contact2():
 def update():
     app.logger.info(request)
     # os.system("sudo /home/ubuntu/Desktop/gitpull.sh")
-    subprocess.Popen(["sudo /home/ubuntu/Desktop/gitpull.sh"])
+    subprocess.Popen(['sudo','/home/ubuntu/Desktop/gitpull.sh'])
     return ("webhook", 200, None)
 
 if __name__ == "__main__":
