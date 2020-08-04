@@ -91,7 +91,7 @@ def contact2():
 @app.route('/update/', methods=['POST'])
 def update():
     app.logger.info(request)
-    os.system("sudo /home/ubuntu/Desktop/gitpull.sh")
+    # os.system("sudo /home/ubuntu/Desktop/gitpull.sh")
     return ("webhook", 200, None)
 
 if __name__ == "__main__":
