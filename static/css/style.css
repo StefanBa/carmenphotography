@@ -19,7 +19,8 @@ font-family: 'Marcellus SC', serif;*/
   --transitionNav: all 0.5s ease 0s;
   --pageHeight: 130vh;
   --navHeight: 10vh;
-  --navHeightMobile: 13vh;
+  --subnavHeight: 8vh;
+  --navHeightMobile: 10vh;
   --headerHeight: 8vh;
   --footerHeight: 20vh;
 }
@@ -140,7 +141,7 @@ nav li a {
   line-height: var(--navHeightMobile);
   padding: 0 3rem;
   font-family: var(--fontNav);
-  font-size: calc(var(--navHeightMobile) * 0.15);
+  font-size: calc(var(--navHeightMobile) * 0.18);
   text-decoration: none;
   color: black;
   z-index: 2;
@@ -149,7 +150,7 @@ nav li a {
 
 .subnav {
   width: 100vw;
-  height: var(--headerHeight);
+  height: var(--subnavHeight);
   display: flex;
   justify-content: center;
   position: -webkit-sticky; /* Safari*/
@@ -164,7 +165,7 @@ nav li a {
 
 .subnav .item {
   background-color: rgba(255, 255, 255, 0.418);
-  height: var(--headerHeight);
+  height: var(--subnavHeight);
   width: 33.33vw;
   text-align: center;
   /* border: 1px solid black; */
@@ -173,9 +174,9 @@ nav li a {
 .subnav a {
   text-decoration: none;
   color: black;
-  line-height: var(--headerHeight);
+  line-height: var(--subnavHeight);
   font-family: var(--fontNav);
-  font-size: calc(var(--navHeightMobile) * 0.15);
+  font-size: calc(var(--navHeightMobile) * 0.18);
   /* border: 3px solid yellow; */
 }
 

@@ -5,16 +5,19 @@ let subnav = document.querySelector(".subnav");
 let foreground = document.querySelector(".foreground");
 let background = document.querySelector(".background");
 let offsety = 0;
-let bigNavHeight = "10vh";
-let smallNavHeight = "6vh";
-let bigSubnavHeight = "height: 8vh";
-let smallSubnavHeight = "height: 0vh";
+let navDimensions = {
+  mainBig: "10vh",
+  mainSmall: "6vh",
+  subBig: "8vh",
+  subSmall: "0vh",
+  panelWidth: "75vw",
+};
 
 // each of the three can be keep, big, or small.
 let showNav = {
   scroll: "keep",
   mouse: "keep",
-  action: "keep",
+  action: "big",
 };
 
 function parallax() {
@@ -34,20 +37,23 @@ function bigSmallNav() {
   }
   switch (showNav.action) {
     case "big":
-      document.documentElement.style.setProperty("--navHeight", bigNavHeight);
+      document.documentElement.style.setProperty("--navHeight", navDimensions.mainBig);
       if (subnav) {
-        subnav.setAttribute("style", bigSubnavHeight);
+        document.documentElement.style.setProperty("--subnavHeight", navDimensions.subBig);
+        // subnav.setAttribute("style", "height: " + navHeight.subBig);
       }
       break;
     case "small":
-      document.documentElement.style.setProperty("--navHeight", smallNavHeight);
+      document.documentElement.style.setProperty("--navHeight", navDimensions.mainSmall);
       if (subnav) {
-        subnav.setAttribute("style", smallSubnavHeight);
+        document.documentElement.style.setProperty("--subnavHeight", navDimensions.subSmall);
+        // subnav.setAttribute("style", "height: " + navHeight.subSmall);
       }
       break;
     case "keep":
       break;
   }
+  document.documentElement.style.setProperty("--navHeightMobile", navDimensions.mainBig);
 }
 
 let prevScrollpos = window.pageYOffset;
@@ -56,6 +62,7 @@ let currentDirection = "up";
 let directionChangePos = 0;
 
 function checkScrollpos() {
+  bigSmallNav();
   let currentScrollPos = window.pageYOffset;
 
   if (currentScrollPos < prevScrollpos) {
@@ -81,7 +88,6 @@ function checkScrollpos() {
 
   offsety = 0.5 * currentScrollPos;
   window.requestAnimationFrame(parallax);
-  bigSmallNav();
 }
 
 let showSidePanel = true;
@@ -92,7 +98,7 @@ function showHideMenu(mode) {
       panel.style.width = "44vw";
     } else {
       if (showSidePanel && mode == "toggle") {
-        panel.style.width = "75vw";
+        panel.style.width = navDimensions.panelWidth;
         menu.style.color = "black";
         showSidePanel = false;
       } else {
@@ -134,6 +140,43 @@ function mouseOnNav() {
   }
 }
 
+function checkWideMode() {
+  let ratio = window.innerWidth / window.innerHeight;
+  if (x.matches && ratio >= 2) {
+    //Desktop Wide
+    navDimensions = {
+      mainBig: "5vw",
+      mainSmall: "3vw",
+      subBig: "3vw",
+      subSmall: "0vw",
+      panelWidth: "75vw",
+    };
+    // console.log("Desktop Wide");
+  } else if (!x.matches && ratio > 1.5) {
+    //Mobile Landscape
+    navDimensions = {
+      mainBig: "8vw",
+      mainSmall: "5vw",
+      subBig: "5vw",
+      subSmall: "0vw",
+      panelWidth: "33vw",
+    };
+    // console.log("Mobile Landscape");
+  } else {
+    //Mobile Portrait or Desktop Regular
+    navDimensions = {
+      mainBig: "9vh",
+      mainSmall: "6vh",
+      subBig: "8vh",
+      subSmall: "0vh",
+      panelWidth: "75vw",
+    };
+    // console.log("Regular");
+  }
+  showNav.scroll = "big";
+  bigSmallNav();
+}
+
 menu.addEventListener("click", showHideMenu("toggle"));
 foreground.addEventListener("click", showHideMenu("hide"));
 
@@ -141,5 +184,9 @@ let x = window.matchMedia("(min-width: 1081px)");
 x.addListener(showHideMenu()); // Attach listener function on state changes
 x.addListener(mouseOnNav); // Attach listener function on state changes
 mouseOnNav();
+
+window.addEventListener("resize", checkWideMode);
+checkWideMode();
+
 //Invoke scrollposition checker each 10ms.
 let id = setInterval(checkScrollpos, 10);

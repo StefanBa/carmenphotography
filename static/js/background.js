@@ -26,7 +26,7 @@ function resizeBackground() {
     }
     background.style.backgroundSize = backgroundX + "px " + backgroundY + "px";
     background.style.backgroundPosition = "center center";
-    console.log("resized!");
+    // console.log("resized!");
   }
   mobileBackgroundResize = false;
 }
