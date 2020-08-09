@@ -151,19 +151,9 @@ function checkWideMode() {
       subSmall: "0vw",
       panelWidth: "75vw",
     };
-    // console.log("Desktop Wide");
-  } else if (!x.matches && ratio > 1.5) {
-    //Mobile Landscape
-    navDimensions = {
-      mainBig: "8vw",
-      mainSmall: "5vw",
-      subBig: "5vw",
-      subSmall: "0vw",
-      panelWidth: "33vw",
-    };
-    // console.log("Mobile Landscape");
-  } else {
-    //Mobile Portrait or Desktop Regular
+    console.log("Desktop Wide");
+  } else if (x.matches && ratio < 2) {
+    //Desktop Regular
     navDimensions = {
       mainBig: "9vh",
       mainSmall: "6vh",
@@ -171,7 +161,27 @@ function checkWideMode() {
       subSmall: "0vh",
       panelWidth: "75vw",
     };
-    // console.log("Regular");
+    console.log("Desktop Regular");
+  } else if (!x.matches && ratio > 1.5) {
+    //Mobile Landscape
+    navDimensions = {
+      mainBig: "9vw",
+      mainSmall: "6vw",
+      subBig: "6vw",
+      subSmall: "0vw",
+      panelWidth: "33vw",
+    };
+    console.log("Mobile Landscape");
+  } else {
+    //Mobile Portrait
+    navDimensions = {
+      mainBig: "10vh",
+      mainSmall: "6vh",
+      subBig: "8vh",
+      subSmall: "0vh",
+      panelWidth: "75vw",
+    };
+    console.log("Mobile Portrait");
   }
   showNav.scroll = "big";
   bigSmallNav();
