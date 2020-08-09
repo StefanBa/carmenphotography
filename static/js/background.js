@@ -46,6 +46,5 @@ background.style.background = "url('" + imagePath + "')";
 window.addEventListener("resize", resizeBackground);
 window.addEventListener("orientationchange", function (event) {
   mobileBackgroundResize = true;
-  resizeBackground();
   // console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
 });

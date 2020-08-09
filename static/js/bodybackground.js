@@ -25,6 +25,5 @@ window.addEventListener("resize", resizeBackground);
 x.addListener(resizeBackground); // Attach listener function on state changes
 window.addEventListener("orientationchange", function (event) {
   mobileBackgroundResize = true;
-  resizeBackground();
   // console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
 });
