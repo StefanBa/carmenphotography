@@ -40,14 +40,12 @@ function bigSmallNav() {
       document.documentElement.style.setProperty("--navHeight", navDimensions.mainBig);
       if (subnav) {
         document.documentElement.style.setProperty("--subnavHeight", navDimensions.subBig);
-        // subnav.setAttribute("style", "height: " + navDimensions.subBig);
       }
       break;
     case "small":
       document.documentElement.style.setProperty("--navHeight", navDimensions.mainSmall);
       if (subnav) {
         document.documentElement.style.setProperty("--subnavHeight", navDimensions.subSmall);
-        // subnav.setAttribute("style", "height: " + navDimensions.subSmall);
       }
       break;
     case "keep":

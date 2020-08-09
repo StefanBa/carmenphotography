@@ -165,7 +165,6 @@ nav li a {
 
 .subnav .item {
   background-color: rgba(255, 255, 255, 0.418);
-  /* height: var(--subnavHeight); */
   width: 33.33vw;
   text-align: center;
   /* border: 1px solid blue; */
@@ -177,6 +176,7 @@ nav li a {
   line-height: var(--subnavHeight);
   font-family: var(--fontNav);
   font-size: calc(var(--navHeightMobile) * 0.18);
+  transition: var(--transitionNav);
   /* border: 3px solid yellow; */
 }
 
