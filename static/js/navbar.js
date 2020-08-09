@@ -167,7 +167,7 @@ function checkWideMode() {
     navDimensions = {
       mainBig: "9vw",
       mainSmall: "6vw",
-      subBig: "6vw",
+      subBig: "8vw",
       subSmall: "0vw",
       panelWidth: "33vw",
     };
