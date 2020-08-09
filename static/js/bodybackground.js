@@ -23,7 +23,7 @@ resizeBackground();
 // do not resize background for mobiles because ugly browser behaviours
 window.addEventListener("resize", resizeBackground);
 x.addListener(resizeBackground); // Attach listener function on state changes
-window.onorientationchange = function (event) {
+window.DeviceOrientationEvent = function (event) {
   mobileBackgroundResize = true;
   // console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
 };

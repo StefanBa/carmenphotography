@@ -44,7 +44,7 @@ background.style.background = "url('" + imagePath + "')";
 //do not resize background for mobiles because ugly browser behaviours
 
 window.addEventListener("resize", resizeBackground);
-window.onorientationchange = function (event) {
+window.DeviceOrientationEvent = function (event) {
   mobileBackgroundResize = true;
   // console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
 };
