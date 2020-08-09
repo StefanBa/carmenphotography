@@ -141,7 +141,7 @@ nav li a {
   line-height: var(--navHeightMobile);
   padding: 0 3rem;
   font-family: var(--fontNav);
-  font-size: calc(var(--navHeightMobile) * 0.18);
+  font-size: calc(var(--navHeightMobile) * 0.19);
   text-decoration: none;
   color: black;
   z-index: 2;
@@ -175,7 +175,7 @@ nav li a {
   color: black;
   line-height: var(--subnavHeight);
   font-family: var(--fontNav);
-  font-size: calc(var(--navHeightMobile) * 0.18);
+  font-size: calc(var(--navHeightMobile) * 0.19);
   transition: var(--transitionNav);
   /* border: 3px solid yellow; */
 }
