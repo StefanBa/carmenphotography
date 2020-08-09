@@ -149,7 +149,7 @@ function checkWideMode() {
       subSmall: "0vw",
       panelWidth: "75vw",
     };
-    console.log("Desktop Wide");
+    // console.log("Desktop Wide");
   } else if (x.matches && ratio < 2) {
     //Desktop Regular
     navDimensions = {
@@ -159,7 +159,7 @@ function checkWideMode() {
       subSmall: "0vh",
       panelWidth: "75vw",
     };
-    console.log("Desktop Regular");
+    // console.log("Desktop Regular");
   } else if (!x.matches && ratio > 1.5) {
     //Mobile Landscape
     navDimensions = {
@@ -169,7 +169,7 @@ function checkWideMode() {
       subSmall: "0vw",
       panelWidth: "33vw",
     };
-    console.log("Mobile Landscape");
+    // console.log("Mobile Landscape");
   } else {
     //Mobile Portrait
     navDimensions = {
@@ -179,7 +179,7 @@ function checkWideMode() {
       subSmall: "0vh",
       panelWidth: "75vw",
     };
-    console.log("Mobile Portrait");
+    // console.log("Mobile Portrait");
   }
   showNav.scroll = "big";
   bigSmallNav();
