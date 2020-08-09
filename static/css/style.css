@@ -165,10 +165,10 @@ nav li a {
 
 .subnav .item {
   background-color: rgba(255, 255, 255, 0.418);
-  height: var(--subnavHeight);
+  /* height: var(--subnavHeight); */
   width: 33.33vw;
   text-align: center;
-  /* border: 1px solid black; */
+  /* border: 1px solid blue; */
 }
 
 .subnav a {
