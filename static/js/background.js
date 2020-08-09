@@ -4,10 +4,10 @@ let imagePath = document.currentScript.getAttribute("path");
 console.log(imagePath);
 let imageX = 0;
 let imageY = 0;
-let firstBackgroundResize = true;
+let mobileBackgroundResize = true;
 
 function resizeBackground() {
-  if (x.matches || firstBackgroundResize) {
+  if (x.matches || mobileBackgroundResize) {
     let viewX = main.clientWidth;
     let viewY = main.clientHeight + header.clientHeight;
     if (window.innerHeight < viewY) {
@@ -26,8 +26,9 @@ function resizeBackground() {
     }
     background.style.backgroundSize = backgroundX + "px " + backgroundY + "px";
     background.style.backgroundPosition = "center center";
+    console.log("resized!");
   }
-  firstBackgroundResize = false;
+  mobileBackgroundResize = false;
 }
 
 let image = new Image();
@@ -43,3 +44,7 @@ background.style.background = "url('" + imagePath + "')";
 //do not resize background for mobiles because ugly browser behaviours
 
 window.addEventListener("resize", resizeBackground);
+window.onorientationchange = function (event) {
+  mobileBackgroundResize = true;
+  // console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
+};

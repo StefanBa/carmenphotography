@@ -5,18 +5,17 @@ let path = document.currentScript.getAttribute("path");
 let pathString = "url(" + path + ") left/cover no-repeat";
 document.documentElement.style.setProperty("--backgroundPath", pathString);
 console.log(pathString);
-let firstBodyBackgroundResize = true;
+let mobileBackgroundResize = true;
 
 function resizeBackground() {
-  if (x.matches || firstBodyBackgroundResize) {
+  if (x.matches || mobileBackgroundResize) {
     let viewX = window.innerWidth;
     let viewY = window.innerHeight;
     document.documentElement.style.setProperty("--aboutHeight", viewY + "px");
     document.documentElement.style.setProperty("--aboutWidth", viewX + "px");
     console.log(viewX, viewY);
   }
-  firstBodyBackgroundResize = false;
-  // console.log("resize");
+  mobileBackgroundResize = false;
 }
 
 resizeBackground();
@@ -24,3 +23,7 @@ resizeBackground();
 // do not resize background for mobiles because ugly browser behaviours
 window.addEventListener("resize", resizeBackground);
 x.addListener(resizeBackground); // Attach listener function on state changes
+window.onorientationchange = function (event) {
+  mobileBackgroundResize = true;
+  // console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
+};
