@@ -141,7 +141,6 @@ function mouseOnNav() {
 function checkWideMode() {
   let ratio = window.innerWidth / window.innerHeight;
   if (x.matches && ratio >= 2) {
-    //Desktop Wide
     navDimensions = {
       mainBig: "5vw",
       mainSmall: "3vw",
@@ -151,7 +150,6 @@ function checkWideMode() {
     };
     // console.log("Desktop Wide");
   } else if (x.matches && ratio < 2) {
-    //Desktop Regular
     navDimensions = {
       mainBig: "9vh",
       mainSmall: "6vh",
@@ -161,7 +159,6 @@ function checkWideMode() {
     };
     // console.log("Desktop Regular");
   } else if (!x.matches && ratio > 1.5) {
-    //Mobile Landscape
     navDimensions = {
       mainBig: "9vw",
       mainSmall: "6vw",
@@ -171,7 +168,6 @@ function checkWideMode() {
     };
     // console.log("Mobile Landscape");
   } else {
-    //Mobile Portrait
     navDimensions = {
       mainBig: "10vh",
       mainSmall: "6vh",
@@ -188,7 +184,7 @@ function checkWideMode() {
 menu.addEventListener("click", showHideMenu("toggle"));
 foreground.addEventListener("click", showHideMenu("hide"));
 
-let x = window.matchMedia("(min-width: 1081px)");
+let x = window.matchMedia("(min-width: 1281px)");
 x.addListener(showHideMenu()); // Attach listener function on state changes
 x.addListener(mouseOnNav); // Attach listener function on state changes
 mouseOnNav();

@@ -341,10 +341,45 @@ footer {
 }
 
 @media screen and (min-width: 1081px) {
-  nav .side.logo {
-    width: 25vw;
+  .subnav .item {
+    width: 15vw;
   }
 
+  .socialbar {
+    width: 20vw;
+  }
+
+  .about {
+    width: 45vw;
+    align-self: flex-end;
+    margin: 0 3vw;
+    /* border: 3px solid blue; */
+  }
+
+  .about .spacer {
+    height: 30vh;
+  }
+
+  .about .title {
+    font-size: 8vw;
+  }
+
+  .about .text {
+    margin: 3vw 0;
+    width: 33vw;
+    padding: 3vw;
+    font-size: 1.3rem;
+  }
+  .contact {
+    align-items: flex-start;
+  }
+
+  .contact .input {
+    font-size: 3vh;
+  }
+}
+
+@media screen and (min-width: 1601px) {
   nav .side a {
     font-size: calc(var(--navHeight) * 0.3);
   }
@@ -401,42 +436,5 @@ footer {
     border-left: 1px solid black;
     border-right: 1px solid black;
     width: 14vw;
-  }
-
-  .subnav .item {
-    width: 15vw;
-  }
-
-  .socialbar {
-    width: 20vw;
-  }
-
-  .about {
-    width: 45vw;
-    align-self: flex-end;
-    margin: 0 3vw;
-    /* border: 3px solid blue; */
-  }
-
-  .about .spacer {
-    height: 30vh;
-  }
-
-  .about .title {
-    font-size: 8vw;
-  }
-
-  .about .text {
-    margin: 3vw 0;
-    width: 33vw;
-    padding: 3vw;
-    font-size: 1.3rem;
-  }
-  .contact {
-    align-items: flex-start;
-  }
-
-  .contact .input {
-    font-size: 3vh;
   }
 }

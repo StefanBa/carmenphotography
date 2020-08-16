@@ -6,29 +6,51 @@ let imageX = 0;
 let imageY = 0;
 let mobileBackgroundResize = true;
 
-function resizeBackground() {
-  if (x.matches || mobileBackgroundResize) {
-    let viewX = main.clientWidth;
-    let viewY = main.clientHeight + header.clientHeight;
-    if (window.innerHeight < viewY) {
-      viewY = viewY - (viewY - window.innerHeight) / 2;
-    }
-    background.style.width = viewX + "px";
-    background.style.height = viewY + "px";
-    let ratio = imageX / imageY;
-    let backgroundY = viewY;
-    let backgroundX = Math.ceil(viewY * ratio);
+// function resizeBackground() {
+//   if (x.matches || mobileBackgroundResize) {
+//     let viewX = main.clientWidth;
+//     let viewY = main.clientHeight + header.clientHeight;
+//     if (window.innerHeight < viewY) {
+//       viewY = viewY - (viewY - window.innerHeight) / 2;
+//     }
+//     background.style.width = viewX + "px";
+//     background.style.height = viewY + "px";
+//     let ratio = imageX / imageY;
+//     let backgroundY = viewY;
+//     let backgroundX = Math.ceil(viewY * ratio);
 
-    if (backgroundX < viewX) {
-      backgroundX = viewX;
-      backgroundY = Math.ceil(viewX / ratio);
-      console.log("specialcase");
-    }
-    background.style.backgroundSize = backgroundX + "px " + backgroundY + "px";
-    background.style.backgroundPosition = "center center";
-    // console.log("resized!");
+//     if (backgroundX < viewX) {
+//       backgroundX = viewX;
+//       backgroundY = Math.ceil(viewX / ratio);
+//       console.log("specialcase");
+//     }
+//     background.style.backgroundSize = backgroundX + "px " + backgroundY + "px";
+//     background.style.backgroundPosition = "center center";
+//     // console.log("resized!");
+//   }
+//   mobileBackgroundResize = false;
+// }
+
+function resizeBackground() {
+  let viewX = window.outerWidth;
+  let viewY = window.outerHeight * 1.5; //because home height is 150vh
+  if (window.innerHeight < viewY) {
+    viewY = viewY - (viewY - window.innerHeight) / 2;
   }
-  mobileBackgroundResize = false;
+  background.style.width = viewX + "px";
+  background.style.height = viewY + "px";
+  let ratio = imageX / imageY;
+  let backgroundY = viewY;
+  let backgroundX = Math.ceil(viewY * ratio);
+
+  if (backgroundX < viewX) {
+    backgroundX = viewX;
+    backgroundY = Math.ceil(viewX / ratio);
+    console.log("specialcase");
+  }
+  background.style.backgroundSize = backgroundX + "px " + backgroundY + "px";
+  background.style.backgroundPosition = "center center";
+  // console.log("resized!");
 }
 
 let image = new Image();
