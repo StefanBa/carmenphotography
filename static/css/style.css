@@ -83,7 +83,7 @@ nav {
 }
 
 nav .side.logo {
-  /* width: 75vw; */
+  width: 25vw;
   margin: 0 0 0 3vw;
   /* border: 3px solid yellow; */
 }
@@ -110,6 +110,7 @@ nav .side i {
   transition: var(--transitionNav);
   line-height: var(--navHeight);
   vertical-align: middle;
+  /* border: 3px solid green; */
 }
 
 nav .side a {
@@ -118,6 +119,7 @@ nav .side a {
   font-family: var(--fontLogo);
   font-size: calc(var(--navHeight) * 0.25);
   transition: var(--transitionNav);
+  /* border: 3px solid blue; */
 }
 
 nav ul {
@@ -415,6 +417,7 @@ footer {
     height: auto;
     width: 44vw;
     position: static;
+    /* border: 3px solid red; */
   }
 
   nav li {
