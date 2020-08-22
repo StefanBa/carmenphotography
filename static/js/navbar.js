@@ -186,8 +186,10 @@ foreground.addEventListener("click", showHideMenu("hide"));
 
 let x = window.matchMedia("(min-width: 1281px)");
 let d = window.matchMedia("(min-width: 1601px)");
+d.addListener(showHideMenu()); // Attach listener function on state changes
 x.addListener(showHideMenu()); // Attach listener function on state changes
 x.addListener(mouseOnNav); // Attach listener function on state changes
+d.addListener(mouseOnNav); // Attach listener function on state changes
 mouseOnNav();
 
 window.addEventListener("resize", checkWideMode);
