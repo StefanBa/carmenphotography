@@ -92,7 +92,7 @@ let showSidePanel = true;
 function showHideMenu(mode) {
   return function () {
     console.log(mode);
-    if (x.matches) {
+    if (d.matches) {
       panel.style.width = "44vw";
     } else {
       if (showSidePanel && mode == "toggle") {
@@ -146,7 +146,7 @@ function checkWideMode() {
       mainSmall: "3vw",
       subBig: "3vw",
       subSmall: "0vw",
-      panelWidth: "75vw",
+      panelWidth: "33vw",
     };
     // console.log("Desktop Wide");
   } else if (x.matches && ratio < 2) {
@@ -155,7 +155,7 @@ function checkWideMode() {
       mainSmall: "6vh",
       subBig: "8vh",
       subSmall: "0vh",
-      panelWidth: "75vw",
+      panelWidth: "33vw",
     };
     // console.log("Desktop Regular");
   } else if (!x.matches && ratio > 1.5) {
@@ -185,6 +185,7 @@ menu.addEventListener("click", showHideMenu("toggle"));
 foreground.addEventListener("click", showHideMenu("hide"));
 
 let x = window.matchMedia("(min-width: 1281px)");
+let d = window.matchMedia("(min-width: 1601px)");
 x.addListener(showHideMenu()); // Attach listener function on state changes
 x.addListener(mouseOnNav); // Attach listener function on state changes
 mouseOnNav();
