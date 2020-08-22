@@ -83,7 +83,7 @@ nav {
 }
 
 nav .side.logo {
-  width: 25vw;
+  width: 75vw;
   margin: 0 0 0 3vw;
   /* border: 3px solid yellow; */
 }
@@ -382,6 +382,9 @@ footer {
 }
 
 @media screen and (min-width: 1601px) {
+  nav .side.logo {
+    width: 25vw;
+  }
   nav .side a {
     font-size: calc(var(--navHeight) * 0.3);
   }
