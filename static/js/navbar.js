@@ -142,6 +142,7 @@ function mouseOnNav() {
 function checkWideMode() {
   let ratio = window.innerWidth / window.innerHeight;
   if (x.matches && ratio >= 2) {
+    viewMode = "DesktopWide";
     navDimensions = {
       mainBig: "5vw",
       mainSmall: "3vw",
@@ -149,8 +150,8 @@ function checkWideMode() {
       subSmall: "0vw",
       panelWidth: "33vw",
     };
-    viewMode = "DesktopWide";
   } else if (x.matches && ratio < 2) {
+    viewMode = "DesktopRegular";
     navDimensions = {
       mainBig: "9vh",
       mainSmall: "6vh",
@@ -158,9 +159,8 @@ function checkWideMode() {
       subSmall: "0vh",
       panelWidth: "33vw",
     };
-    viewMode = "DesktopRegular";
-    // console.log("Desktop Regular");
   } else if (!x.matches && ratio > 1.5) {
+    viewMode = "MobileLandscape";
     navDimensions = {
       mainBig: "9vw",
       mainSmall: "6vw",
@@ -168,8 +168,8 @@ function checkWideMode() {
       subSmall: "0vw",
       panelWidth: "33vw",
     };
-    viewMode = "MobileLandscape";
   } else {
+    viewMode = "MobilePortrait";
     navDimensions = {
       mainBig: "10vh",
       mainSmall: "6vh",
@@ -177,9 +177,8 @@ function checkWideMode() {
       subSmall: "0vh",
       panelWidth: "75vw",
     };
-    viewMode = "MobilePortrait";
   }
-  console.log(viewMode);
+  // console.log(viewMode);
   showNav.scroll = "big";
   bigSmallNav();
 }

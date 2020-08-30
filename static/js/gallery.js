@@ -9,6 +9,7 @@ menu_c.addEventListener("click", updateGallery("c"), false);
 
 let image = [];
 let imageDiv = [];
+let current = "a";
 
 function imageFound(im, dv) {
   return function () {
@@ -17,23 +18,11 @@ function imageFound(im, dv) {
     let h = im.height;
     let w = im.width;
     if (h > w) {
-      dv.setAttribute("style", "height: 100vh; text-align: center; padding: 2vh 0;");
-      im.setAttribute("style", "max-width: 100%; height: 100%; width: auto;");
+      dv.setAttribute("style", "width: 75vw; text-align: center; padding: 2vh 0;");
     } else {
       dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0;");
-      im.setAttribute("style", "width: 100%; max-height: 100%; height: auto");
     }
-
-    // let h = im.height;
-    // let w = im.width;
-    // if (h > w) {
-    //   im.setAttribute("style", "object-fit: contain; width: 75%");
-    //   dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0");
-    // } else {
-    //   im.setAttribute("style", "object-fit: contain; width: 100%");
-    //   dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0");
-    // }
-    // gallery.appendChild(dv);
+    im.setAttribute("style", "width: 100%; max-height: 100%; height: auto; object-fit: cover");
   };
 }
 
@@ -60,4 +49,5 @@ function updateGallery(key) {
     }
   };
 }
+
 updateGallery("a")();
