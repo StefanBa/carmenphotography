@@ -5,6 +5,7 @@ let subnav = document.querySelector(".subnav");
 let foreground = document.querySelector(".foreground");
 let background = document.querySelector(".background");
 let offsety = 0;
+let viewMode = "DesktopWide";
 let navDimensions = {
   mainBig: "10vh",
   mainSmall: "6vh",
@@ -148,7 +149,7 @@ function checkWideMode() {
       subSmall: "0vw",
       panelWidth: "33vw",
     };
-    // console.log("Desktop Wide");
+    viewMode = "DesktopWide";
   } else if (x.matches && ratio < 2) {
     navDimensions = {
       mainBig: "9vh",
@@ -157,6 +158,7 @@ function checkWideMode() {
       subSmall: "0vh",
       panelWidth: "33vw",
     };
+    viewMode = "DesktopRegular";
     // console.log("Desktop Regular");
   } else if (!x.matches && ratio > 1.5) {
     navDimensions = {
@@ -166,7 +168,7 @@ function checkWideMode() {
       subSmall: "0vw",
       panelWidth: "33vw",
     };
-    // console.log("Mobile Landscape");
+    viewMode = "MobileLandscape";
   } else {
     navDimensions = {
       mainBig: "10vh",
@@ -175,8 +177,9 @@ function checkWideMode() {
       subSmall: "0vh",
       panelWidth: "75vw",
     };
-    // console.log("Mobile Portrait");
+    viewMode = "MobilePortrait";
   }
+  console.log(viewMode);
   showNav.scroll = "big";
   bigSmallNav();
 }

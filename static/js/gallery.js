@@ -17,12 +17,22 @@ function imageFound(im, dv) {
     let h = im.height;
     let w = im.width;
     if (h > w) {
-      im.setAttribute("style", "object-fit: contain; width: 75%");
-      dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0");
+      dv.setAttribute("style", "height: 100vh; text-align: center; padding: 2vh 0;");
+      im.setAttribute("style", "max-width: 100%; height: 100%; width: auto;");
     } else {
-      im.setAttribute("style", "object-fit: contain; width: 100%");
-      dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0");
+      dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0;");
+      im.setAttribute("style", "width: 100%; max-height: 100%; height: auto");
     }
+
+    // let h = im.height;
+    // let w = im.width;
+    // if (h > w) {
+    //   im.setAttribute("style", "object-fit: contain; width: 75%");
+    //   dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0");
+    // } else {
+    //   im.setAttribute("style", "object-fit: contain; width: 100%");
+    //   dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0");
+    // }
     // gallery.appendChild(dv);
   };
 }
