@@ -17,13 +17,13 @@ function imageFound(im, dv) {
     let h = im.height;
     let w = im.width;
     if (h > w) {
-      im.setAttribute("style", "object-fit: contain; height: 100%");
-      dv.setAttribute("style", "min-width: 75vw; text-align: center; padding: 2vh 0");
+      im.setAttribute("style", "object-fit: contain; width: 75%");
+      dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0");
     } else {
-      im.setAttribute("style", "object-fit: contain; width: 100%; ");
+      im.setAttribute("style", "object-fit: contain; width: 100%");
       dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0");
     }
-    gallery.appendChild(dv);
+    // gallery.appendChild(dv);
   };
 }
 
@@ -46,6 +46,7 @@ function updateGallery(key) {
       image[i].addEventListener("load", imageFound(image[i], imageDiv[i]));
       image[i].addEventListener("error", () => console.log("Image not found!"));
       image[i].src = "/static/gallery/" + key + i + ".jpg";
+      gallery.appendChild(imageDiv[i]);
     }
   };
 }

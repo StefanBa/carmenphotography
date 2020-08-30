@@ -13,7 +13,7 @@ function resizeBackground() {
     let viewY = window.innerHeight;
     document.documentElement.style.setProperty("--aboutHeight", viewY + "px");
     document.documentElement.style.setProperty("--aboutWidth", viewX + "px");
-    console.log(viewX, viewY);
+    // console.log(viewX, viewY);
   }
   mobileBackgroundResize = false;
 }
