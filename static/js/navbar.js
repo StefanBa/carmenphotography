@@ -3,6 +3,7 @@ let panel = document.querySelector("nav ul");
 let nav = document.querySelector("nav");
 let subnav = document.querySelector(".subnav");
 let subitems = document.querySelectorAll(".subitem");
+let subboarder = document.querySelector(".subboarder");
 let foreground = document.querySelector(".foreground");
 let background = document.querySelector(".background");
 let offsety = 0;
@@ -25,27 +26,26 @@ let showNav = {
 };
 
 let animationStyle = {
-  offx: [-1, 0, 1, -1, 0, 1, -1, 0, 1],
-  offy: [1, 1, 1, 0, 0, 0, -1, -1, -1],
-  speedx: [-0.1, 0.3, 0.4, -0.5, -0.1, 0.6, -0.8, 0.3, 1.2],
-  speedy: [0.2, 0.5, 0.9, -0.2, -0.1, 0.3, -1, -0.4, -0.7],
-  speedz: [0.1, 0.4, 0.2, 0.8, 0.6, 0.2, 0.1, 0.9, 0.1],
-  opacity: [0, 0.5, 0.2, 0.3, 0.2, 0.8, 0, 0.7, 0.6],
+  offx: [-1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5],
+  offy: [1.5, 1.5, 1.5, 1.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -1.5, -1.5, -1.5, -1.5],
+  speedx: [-0.6, -0.3, 0.4, 0.8, -0.5, -0.1, 0.3, 0.9, -0.8, -0.3, 0.2, 0.3, -0.8, -0.7, 0.4, 0.8],
+  speedy: [0.3, 0.4, 0.3, 0.2, 0.2, 0.3, 0.1, 0.2, -0.3, -0.6, -0.2, -0.5, -0.6, -0.7, -0.9, -0.8],
+  opacity: [0.4, 0.5, 0.6, 0.3, 0.5, 0.8, 0.2, 0.7, 0.6, 0.5, 0.9, 0.6, 0.2, 0.3, 0.5, 0.7],
 };
 
 function parallax() {
   if (background) {
     background.style.transform = "translate3d(0, -" + offsety + "px, 0)";
+    subboarder.style.transform = "translate3d(0, " + offsety * 0.5 + "px, 0)";
     let scrollableHeight = document.body.scrollHeight - window.innerHeight;
     let act = currentScrollPos / scrollableHeight;
     let fact = 50;
-    let subitemSize = (window.innerHeight / 100) * 5 + 3;
+    let subitemSize = (window.innerHeight / 100) * 3 + 5;
     for (var i = 0; i < subitems.length; i++) {
-      let posx = Math.round(animationStyle.offx[i] * subitemSize + animationStyle.speedx[i] * act * 300);
-      let posy = Math.round(animationStyle.offy[i] * subitemSize + animationStyle.speedy[i] * act * 100 - offsety);
-      let posz = Math.round(animationStyle.speedz[i] * act * 50);
-      let opa = (1 - animationStyle.opacity[i]) * act;
-      subitems[i].style.transform = "translate3d(" + posx + "px," + posy + "px, " + posz + "px)";
+      let posx = Math.round(animationStyle.offx[i] * subitemSize + animationStyle.speedx[i] * act * 200);
+      let posy = Math.round(animationStyle.offy[i] * subitemSize + animationStyle.speedy[i] * act * 200);
+      let opa = -(1 - animationStyle.opacity[i]) * act + 0.8;
+      subitems[i].style.transform = "translate3d(" + posx + "px," + posy + "px, 0)";
       subitems[i].style.opacity = opa;
     }
   }
