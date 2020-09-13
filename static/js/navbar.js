@@ -7,6 +7,7 @@ let subboarder = document.querySelector(".subboarder");
 let foreground = document.querySelector(".foreground");
 let background = document.querySelector(".background");
 let offsety = 0;
+let offsety_old = 0;
 let viewMode = "DesktopWide";
 let currentScrollPos = 0;
 
@@ -36,17 +37,21 @@ let animationStyle = {
 function parallax() {
   if (background) {
     background.style.transform = "translate3d(0, -" + offsety + "px, 0)";
-    subboarder.style.transform = "translate3d(0, " + offsety * 0.5 + "px, 0)";
+    // subboarder.style.transform = "translate3d(0, " + offsety + "px, 0)";
     let scrollableHeight = document.body.scrollHeight - window.innerHeight;
     let act = currentScrollPos / scrollableHeight;
-    let fact = 50;
     let subitemSize = (window.innerHeight / 100) * 3 + 5;
     for (var i = 0; i < subitems.length; i++) {
       let posx = Math.round(animationStyle.offx[i] * subitemSize + animationStyle.speedx[i] * act * 0.2 * window.innerWidth);
-      let posy = Math.round(animationStyle.offy[i] * subitemSize + animationStyle.speedy[i] * act * 0.2 * window.innerHeight);
+      let posy = Math.round(
+        animationStyle.offy[i] * subitemSize + animationStyle.speedy[i] * act * 0.2 * window.innerHeight + 0.2 * window.innerHeight
+      );
       let opa = -(1 - animationStyle.opacity[i]) * act + 0.8;
       subitems[i].style.transform = "translate3d(" + posx + "px," + posy + "px, 0)";
       subitems[i].style.opacity = opa;
+      let size = window.innerHeight * Math.abs(animationStyle.speedx[i]) * act * 0.01 + 3;
+      subitems[i].style.width = size + "vh";
+      subitems[i].style.height = size + "vh";
     }
   }
 }
