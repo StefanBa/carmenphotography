@@ -2,10 +2,13 @@ let menu = document.querySelector("nav .side i");
 let panel = document.querySelector("nav ul");
 let nav = document.querySelector("nav");
 let subnav = document.querySelector(".subnav");
+let subitems = document.querySelectorAll(".subitem");
 let foreground = document.querySelector(".foreground");
 let background = document.querySelector(".background");
 let offsety = 0;
 let viewMode = "DesktopWide";
+let currentScrollPos = 0;
+
 let navDimensions = {
   mainBig: "10vh",
   mainSmall: "6vh",
@@ -21,9 +24,30 @@ let showNav = {
   action: "big",
 };
 
+let animationStyle = {
+  offx: [-1, 0, 1, -1, 0, 1, -1, 0, 1],
+  offy: [1, 1, 1, 0, 0, 0, -1, -1, -1],
+  speedx: [-0.1, 0.3, 0.4, -0.5, -0.1, 0.6, -0.8, 0.3, 1.2],
+  speedy: [0.2, 0.5, 0.9, -0.2, -0.1, 0.3, -1, -0.4, -0.7],
+  speedz: [0.1, 0.4, 0.2, 0.8, 0.6, 0.2, 0.1, 0.9, 0.1],
+  opacity: [0, 0.5, 0.2, 0.3, 0.2, 0.8, 0, 0.7, 0.6],
+};
+
 function parallax() {
   if (background) {
     background.style.transform = "translate3d(0, -" + offsety + "px, 0)";
+    let scrollableHeight = document.body.scrollHeight - window.innerHeight;
+    let act = currentScrollPos / scrollableHeight;
+    let fact = 50;
+    let subitemSize = (window.innerHeight / 100) * 5 + 3;
+    for (var i = 0; i < subitems.length; i++) {
+      let posx = Math.round(animationStyle.offx[i] * subitemSize + animationStyle.speedx[i] * act * 300);
+      let posy = Math.round(animationStyle.offy[i] * subitemSize + animationStyle.speedy[i] * act * 100 - offsety);
+      let posz = Math.round(animationStyle.speedz[i] * act * 50);
+      let opa = (1 - animationStyle.opacity[i]) * act;
+      subitems[i].style.transform = "translate3d(" + posx + "px," + posy + "px, " + posz + "px)";
+      subitems[i].style.opacity = opa;
+    }
   }
 }
 
@@ -62,7 +86,7 @@ let directionChangePos = 0;
 
 function checkScrollpos() {
   bigSmallNav();
-  let currentScrollPos = window.pageYOffset;
+  currentScrollPos = window.pageYOffset;
 
   if (currentScrollPos < prevScrollpos) {
     currentDirection = "up";
