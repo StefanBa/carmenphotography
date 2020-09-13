@@ -12,7 +12,7 @@
       <option value="wedding">Hochzeitsanlass</option>
       <option value="family">Freunde- / Paare- / Familienshooting</option>
       <option value="business">Firmenanlass</option>
-      <option value="other">andere</option> </select
+      <option value="other">andere</option></select
     ><br />
     <textarea name="details" id="details" class="input" cols="40" rows="10" placeholder="Details über Anfrage"></textarea>
     <input type="text" name="url" class="input" id="url" placeholder="URL" />
@@ -26,6 +26,6 @@
 {%endblock%}
 <!-- <script src="./js/bodybackground.js" path="./images/nikon2.jpeg"></script> -->
 {%block script%}
-<script src="{{ url_for('static', filename='js/bodybackground.js')}}" path="{{ url_for('static', filename='images/nikon.jpeg')}}"></script>
+<script src="{{ url_for('static', filename='js/bodybackground.js')}}" path="{{ url_for('static', filename='images/contact.jpeg')}}"></script>
 <script src="{{ url_for('static', filename='js/contact.js')}}"></script>
 {%endblock%}
