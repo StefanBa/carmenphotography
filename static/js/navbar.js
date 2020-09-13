@@ -46,10 +46,10 @@ function parallax() {
       let posy = Math.round(
         animationStyle.offy[i] * subitemSize + animationStyle.speedy[i] * act * 0.2 * window.innerHeight + 0.2 * window.innerHeight
       );
-      let opa = Math.round(-(1 - animationStyle.opacity[i]) * act + 0.8);
+      let opa = Math.round((-(1 - animationStyle.opacity[i]) * act + 0.8) * 100) / 100;
       subitems[i].style.transform = "translate3d(" + posx + "px," + posy + "px, 0)";
       subitems[i].style.opacity = opa;
-      let size = Math.round(window.innerHeight * Math.abs(animationStyle.speedx[i]) * act * 0.005 + 3);
+      let size = Math.round((window.innerHeight * Math.abs(animationStyle.speedx[i]) * act * 0.005 + 3) * 100) / 100;
       subitems[i].style.width = size + "vh";
       subitems[i].style.height = size + "vh";
     }
