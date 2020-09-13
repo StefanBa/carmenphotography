@@ -227,7 +227,7 @@ nav li a {
   width: 3vh;
   position: absolute;
   background-color: rgb(255, 255, 255);
-  transition: all 0.1s linear 0s;
+  /* transition: all 0.1s linear 0s; */
 }
 
 .gallery {
