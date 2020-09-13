@@ -29,7 +29,7 @@ let animationStyle = {
   offx: [-1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5],
   offy: [1.5, 1.5, 1.5, 1.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -1.5, -1.5, -1.5, -1.5],
   speedx: [-0.6, -0.3, 0.4, 0.8, -0.5, -0.1, 0.3, 0.9, -0.8, -0.3, 0.2, 0.3, -0.8, -0.7, 0.4, 0.8],
-  speedy: [0.3, 0.4, 0.3, 0.2, 0.2, 0.3, 0.1, 0.2, -0.3, -0.6, -0.2, -0.5, -0.6, -0.7, -0.9, -0.8],
+  speedy: [0.8, 0.7, 0.5, 0.9, 0.5, 0.3, 0.2, 0.6, -0.3, -0.6, -0.2, -0.5, -0.6, -0.7, -0.9, -0.8],
   opacity: [0.4, 0.5, 0.6, 0.3, 0.5, 0.8, 0.2, 0.7, 0.6, 0.5, 0.9, 0.6, 0.2, 0.3, 0.5, 0.7],
 };
 
@@ -42,8 +42,8 @@ function parallax() {
     let fact = 50;
     let subitemSize = (window.innerHeight / 100) * 3 + 5;
     for (var i = 0; i < subitems.length; i++) {
-      let posx = Math.round(animationStyle.offx[i] * subitemSize + animationStyle.speedx[i] * act * 200);
-      let posy = Math.round(animationStyle.offy[i] * subitemSize + animationStyle.speedy[i] * act * 200);
+      let posx = Math.round(animationStyle.offx[i] * subitemSize + animationStyle.speedx[i] * act * 0.2 * window.innerWidth);
+      let posy = Math.round(animationStyle.offy[i] * subitemSize + animationStyle.speedy[i] * act * 0.2 * window.innerHeight);
       let opa = -(1 - animationStyle.opacity[i]) * act + 0.8;
       subitems[i].style.transform = "translate3d(" + posx + "px," + posy + "px, 0)";
       subitems[i].style.opacity = opa;
