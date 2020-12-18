@@ -1,0 +1,43 @@
+cd C:\Users\stefan\Documents\GitHub\carmenphotography
+venv\Scripts\activate
+python __init__.py
+
+ssh ubuntu@192.168.1.30
+
+/home/ubuntu/Desktop/gitpull.sh
+
+cd /var/www/webApp/webApp/
+git config --global credential.helper store
+
+git pull cp master
+
+sudo apt-get install libapache2-mod-wsgi-py3
+https://www.youtube.com/watch?v=YFBRVJPhDGY
+
+sudo -i
+exit
+
+sudo apache2ctl configtest
+sudo service apache2 status
+
+sudo bash -c 'echo > /var/log/apache2/error.log' 
+sudo service apache2 restart
+sudo nano /var/log/apache2/error.log
+
+sudo nano /etc/apache2/sites-available/webApp.conf
+
+sudo nano /var/www/webApp/webApp/__init__.py
+
+sudo crontab -e
+sudo certbot --apache -d www.carmenphotography.ch
+sudo certbot renew
+
+context = SSL.Context(SSL.TLSv1_2_METHOD)
+context.use_privatekey_file('/etc/letsencrypt/live/www.carmenphotography.ch/privkey.pem')
+context.use_certificate_chain_file('/etc/letsencrypt/live/www.carmenphotography.ch/fullchain.pem')
+context.use_certificate_file('/etc/letsencrypt/live/www.carmenphotography.ch/cert.pem')
+
+mail stuff:
+https://www.linuxbabe.com/mail-server/setup-basic-postfix-mail-sever-ubuntu
+https://www.linuxbabe.com/mail-server/secure-email-server-ubuntu-postfix-dovecot
+
