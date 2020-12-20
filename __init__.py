@@ -55,7 +55,7 @@ def about():
 @app.route('/contact/', methods=['POST', 'GET'])
 def contact():
     if request.method == 'POST':
-        if request.form['url'] != "":
+        if request.form['url1'] != "":
             return render_template('contact.html') #it's a bot!
         data_surname = request.form['surname']
         data_lastname = request.form['lastname']

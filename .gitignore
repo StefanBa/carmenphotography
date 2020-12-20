@@ -7,3 +7,4 @@ __pycache__/
 static/gallery/
 static/galleryOriginal/
 venv/
+launch_ssh.bat
