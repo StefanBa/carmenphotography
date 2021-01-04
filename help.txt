@@ -44,5 +44,17 @@ https://www.linuxbabe.com/mail-server/secure-email-server-ubuntu-postfix-dovecot
 mail finally worked with this:
 https://www.youtube.com/watch?v=HZTJ_HW4xmY
 
+weiterleiten:
+https://www.youtube.com/watch?v=Zqg-t3iJKKU
+
+sudo nano /etc/postfix/main.cf
+sudo nano /etc/postfix/virtual
+sudo postmap /etc/postfix/virtual
+sudo systemctl restart postfix
+sudo tail -30 /var/log/mail.log
+
+mail schreiben mit s-nail
+echo 'halodu1807' | s-nail -s 'betreff1807' -r stefan@carmenphotography.ch stefanbaumann.b@gmail.com
+
 
 
