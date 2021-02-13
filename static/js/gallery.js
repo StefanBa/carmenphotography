@@ -2,6 +2,7 @@ let gallery = document.querySelector(".gallery");
 let menu_a = document.querySelector(".wedding");
 let menu_b = document.querySelector(".people");
 let menu_c = document.querySelector(".world");
+let t0 = performance.now();
 
 menu_a.addEventListener("click", updateGallery("a"), false);
 menu_b.addEventListener("click", updateGallery("b"), false);
@@ -39,12 +40,10 @@ function updateGallery(key) {
     clearGallery();
     for (i = 1; i < 100; i++) {
       imageDiv[i] = document.createElement("div");
-      // imageDiv[i].setAttribute("style", "height: 75vh ; width: 100vw");
-      // imageDiv[i].setAttribute("style", " max-height: 75vh; border: 3px solid blue");
       image[i] = new Image();
       image[i].addEventListener("load", imageFound(image[i], imageDiv[i]));
       image[i].addEventListener("error", () => console.log("Image not found!"));
-      image[i].src = "/static/gallery/" + key + i + ".jpg";
+      image[i].src = "/static/gallery/" + key + i + ".jpg?" + t0;
       gallery.appendChild(imageDiv[i]);
     }
   };
