@@ -2,7 +2,6 @@ let gallery = document.querySelector(".gallery");
 let menu_a = document.querySelector(".wedding");
 let menu_b = document.querySelector(".people");
 let menu_c = document.querySelector(".world");
-let t0 = performance.now();
 
 menu_a.addEventListener("click", updateGallery("a"), false);
 menu_b.addEventListener("click", updateGallery("b"), false);
@@ -11,6 +10,12 @@ menu_c.addEventListener("click", updateGallery("c"), false);
 let image = [];
 let imageDiv = [];
 let current = "a";
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+today = dd + mm + yyyy;
 
 function imageFound(im, dv) {
   return function () {
@@ -43,7 +48,7 @@ function updateGallery(key) {
       image[i] = new Image();
       image[i].addEventListener("load", imageFound(image[i], imageDiv[i]));
       image[i].addEventListener("error", () => console.log("Image not found!"));
-      image[i].src = "/static/gallery/" + key + i + ".jpg?" + t0;
+      image[i].src = "/static/gallery/" + key + i + ".jpg?" + today;
       gallery.appendChild(imageDiv[i]);
     }
   };
