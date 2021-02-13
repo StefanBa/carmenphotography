@@ -54,7 +54,7 @@ sudo systemctl restart postfix
 sudo tail -30 /var/log/mail.log
 
 mail schreiben mit s-nail
-echo 'halodu1807' | s-nail -s 'betreff1807' -r stefan@carmenphotography.ch stefanbaumann.b@gmail.com
+echo 'halodu1807' | s-nail -s 'betreff1807' -r stefan@carmenphotography.ch mymailadress
 
 
 
