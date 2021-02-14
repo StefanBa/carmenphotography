@@ -45,16 +45,16 @@ class Dataset(db.Model):
 @app.template_filter('autoversion')
 def autoversion_filter(filename):
     # determining fullpath might be project specific
-    app.logger.info('filename is: ' + filename)
+    app.logger.warning('filename is: ' + filename)
     fullpath = os.path.join(app.instance_path[:-9], filename[1:])
-    app.logger.info('fullpath is: ' + fullpath)
+    app.logger.warning('fullpath is: ' + fullpath)
     try:
         timestamp = str(os.path.getmtime(fullpath))
     except OSError:
         app.logger.warning(traceback.format_exc())
         return filename
     newfilename = "{0}?v={1}".format(filename, timestamp)
-    app.logger.info('newfilename is: ' + newfilename)
+    app.logger.warning('newfilename is: ' + newfilename)
     return newfilename
 
 @app.route('/')
