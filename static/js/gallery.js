@@ -11,12 +11,6 @@ let image = [];
 let imageDiv = [];
 let current = "a";
 
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
-today = dd + mm + yyyy;
-
 function imageFound(im, dv) {
   return function () {
     console.log("Image found!");
@@ -48,7 +42,7 @@ function updateGallery(key) {
       image[i] = new Image();
       image[i].addEventListener("load", imageFound(image[i], imageDiv[i]));
       image[i].addEventListener("error", () => console.log("Image not found!"));
-      image[i].src = "/static/gallery/" + key + i + ".jpg?" + today;
+      image[i].src = "/static/gallery/" + key + i + ".jpg";
       gallery.appendChild(imageDiv[i]);
     }
   };

@@ -57,4 +57,5 @@ mail schreiben mit s-nail
 echo 'halodu1807' | s-nail -s 'betreff1807' -r stefan@carmenphotography.ch mymailadress
 
 
-
+Caching
+https://stackoverflow.com/questions/41144565/flask-does-not-see-change-in-js-file

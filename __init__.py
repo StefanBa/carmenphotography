@@ -40,6 +40,19 @@ class Dataset(db.Model):
     def __repr__(self):
         return '<Dataset %r>' % self.id
 
+# caching trick from
+# https://ana-balica.github.io/2014/02/01/autoversioning-static-assets-in-flask/
+@app.template_filter('autoversion')
+def autoversion_filter(filename):
+    # determining fullpath might be project specific
+    fullpath = os.path.join(app.instance_path[:-9], filename[1:])
+    try:
+        timestamp = str(os.path.getmtime(fullpath))
+    except OSError:
+        return filename
+    newfilename = "{0}?v={1}".format(filename, timestamp)
+    return newfilename
+
 @app.route('/')
 def index():
     return render_template('index.html')

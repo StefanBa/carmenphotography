@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bodybackground.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') |autoversion}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bodybackground.css') |autoversion}}" />
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-5.13.0-web/css/all.css')}}" /> -->
     <link
       rel="stylesheet"
@@ -63,7 +63,7 @@
         </ul>
       </footer>
     </div>
-    <script src="{{ url_for('static', filename='js/navbar.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/navbar.js') |autoversion}}"></script>
     {%block script%}{%endblock%}
   </body>
 </html>
