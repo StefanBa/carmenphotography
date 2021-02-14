@@ -13,7 +13,7 @@ let current = "a";
 
 function imageFound(im, dv) {
   return function () {
-    console.log("Image found!");
+    console.log("Image found: " + im.src);
     dv.appendChild(im);
     let h = im.height;
     let w = im.width;
@@ -42,7 +42,7 @@ function updateGallery(key) {
       image[i] = new Image();
       image[i].addEventListener("load", imageFound(image[i], imageDiv[i]));
       image[i].addEventListener("error", () => console.log("Image not found!"));
-      image[i].src = "/static/gallery/" + key + i + ".jpg";
+      image[i].src = "/static/gallery/" + key + i + ".jpg?v=" + image_version;
       gallery.appendChild(imageDiv[i]);
     }
   };

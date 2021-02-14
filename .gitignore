@@ -5,6 +5,6 @@ sslstuff.txt
 .vscode/
 __pycache__/
 static/gallery/
-static/galleryOriginal/
+galleryOriginal/
 venv/
 launch_ssh.bat

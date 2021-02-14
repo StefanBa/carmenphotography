@@ -49,16 +49,13 @@ def autoversion_filter(filename):
     try:
         timestamp = str(os.path.getmtime(fullpath))
     except OSError:
-        app.logger.warning(traceback.format_exc())
         fullpath = os.path.join(app.instance_path[:-9]+"/webApp", filename[1:])
         try:
             timestamp = str(os.path.getmtime(fullpath))
         except OSError:
             app.logger.warning(traceback.format_exc())
             return filename
-
     newfilename = "{0}?v={1}".format(filename, timestamp)
-    app.logger.warning('newfilename is: ' + newfilename)
     return newfilename
 
 @app.route('/')
