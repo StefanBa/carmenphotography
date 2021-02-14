@@ -11,8 +11,6 @@ import os
 import traceback
 import mailconfig
 
-logging.basicConfig(level=logging.INFO)
-
 app = Flask(__name__)
 # four forwardslashes would be absolute path, three are relative.
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///c_base.db'
