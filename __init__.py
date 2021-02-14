@@ -46,10 +46,10 @@ class Dataset(db.Model):
 def autoversion_filter(filename):
     # determining fullpath might be project specific
     fullpath = os.path.join(app.instance_path[:-9], filename[1:])
-    try:
-        timestamp = str(os.path.getmtime(fullpath))
-    except OSError:
-        return filename
+    # try:
+    timestamp = str(os.path.getmtime(fullpath))
+    # except OSError:
+        # return filename
     newfilename = "{0}?v={1}".format(filename, timestamp)
     return newfilename
 
