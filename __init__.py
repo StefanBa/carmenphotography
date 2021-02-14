@@ -11,6 +11,8 @@ import os
 import traceback
 import mailconfig
 
+logging.basicConfig(level=logging.DEBUG)
+
 app = Flask(__name__)
 # four forwardslashes would be absolute path, three are relative.
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///c_base.db'
@@ -45,12 +47,16 @@ class Dataset(db.Model):
 @app.template_filter('autoversion')
 def autoversion_filter(filename):
     # determining fullpath might be project specific
+    app.logger.info('filename is: ' + filename)
     fullpath = os.path.join(app.instance_path[:-9], filename[1:])
+    app.logger.info('fullpath is: ' + fullpath)
     # try:
     timestamp = str(os.path.getmtime(fullpath))
+    app.logger.info('timestamp is: ' + timestamp)
     # except OSError:
         # return filename
     newfilename = "{0}?v={1}".format(filename, timestamp)
+    app.logger.info('newfilename is: ' + newfilename)
     return newfilename
 
 @app.route('/')
