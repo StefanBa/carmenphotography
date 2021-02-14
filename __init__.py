@@ -52,7 +52,7 @@ def autoversion_filter(filename):
     app.logger.info('fullpath is: ' + fullpath)
     try:
         timestamp = str(os.path.getmtime(fullpath))
-    app.logger.info('timestamp is: ' + timestamp)
+        app.logger.info('timestamp is: ' + timestamp)
     except OSError:
         return filename
     newfilename = "{0}?v={1}".format(filename, timestamp)
