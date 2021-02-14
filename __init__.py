@@ -55,7 +55,7 @@ def autoversion_filter(filename):
             timestamp = str(os.path.getmtime(fullpath))
         except OSError:
             app.logger.warning(traceback.format_exc())
-        return filename
+            return filename
 
     newfilename = "{0}?v={1}".format(filename, timestamp)
     app.logger.warning('newfilename is: ' + newfilename)
