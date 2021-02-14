@@ -50,11 +50,11 @@ def autoversion_filter(filename):
     app.logger.info('filename is: ' + filename)
     fullpath = os.path.join(app.instance_path[:-9], filename[1:])
     app.logger.info('fullpath is: ' + fullpath)
-    # try:
+    try:
     timestamp = str(os.path.getmtime(fullpath))
     app.logger.info('timestamp is: ' + timestamp)
-    # except OSError:
-        # return filename
+    except OSError:
+        return filename
     newfilename = "{0}?v={1}".format(filename, timestamp)
     app.logger.info('newfilename is: ' + newfilename)
     return newfilename
