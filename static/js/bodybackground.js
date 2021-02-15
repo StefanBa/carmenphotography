@@ -4,7 +4,7 @@ let path = document.currentScript.getAttribute("path");
 // let before = document.querySelector("body:before");
 let pathString = "url(" + path + ") left/cover no-repeat";
 document.documentElement.style.setProperty("--backgroundPath", pathString);
-console.log(pathString);
+// console.log(pathString);
 let mobileBackgroundResize = true;
 
 function resizeBackground() {

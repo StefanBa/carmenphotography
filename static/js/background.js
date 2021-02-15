@@ -1,7 +1,7 @@
 let main = document.querySelector(".main");
 let header = document.querySelector("header");
 let imagePath = document.currentScript.getAttribute("path");
-console.log(imagePath);
+// console.log(imagePath);
 let imageX = 0;
 let imageY = 0;
 let mobileBackgroundResize = true;

@@ -121,7 +121,7 @@ function checkScrollpos() {
 let showSidePanel = true;
 function showHideMenu(mode) {
   return function () {
-    console.log(mode);
+    // console.log(mode);
     if (d.matches) {
       panel.style.width = "44vw";
     } else {
@@ -140,9 +140,9 @@ function showHideMenu(mode) {
 
 function mouseOnNav() {
   //check if mouseover nav or subnav
-  console.log("mousechecker");
+  // console.log("mousechecker");
   if (x.matches) {
-    console.log("do mousecheck");
+    // console.log("do mousecheck");
     nav.onmouseover = function () {
       showNav.mouse = "big";
     };
@@ -158,7 +158,7 @@ function mouseOnNav() {
       };
     }
   } else {
-    console.log("unbind");
+    // console.log("unbind");
     nav.onmouseover = null;
     nav.onmouseout = null;
     if (subnav) {

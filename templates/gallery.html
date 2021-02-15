@@ -15,7 +15,8 @@
 <div class="gallery">
   <!-- <div class="picture"></div> -->
   <!-- <script src="./js/gallery.js"></script> -->
-  <script src="{{ url_for('static', filename='js/image_version.js') |autoversion}}"></script>
+  <script> let pics = '{{ pics | safe }}'</script>
+  <script src="{{ url_for('static', filename='gallery/image_version.js') |autoversion}}"></script>
   <script src="{{ url_for('static', filename='js/gallery.js') |autoversion}}"></script>
 </div>
 {%endblock%}

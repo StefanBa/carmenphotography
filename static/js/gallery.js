@@ -2,6 +2,7 @@ let gallery = document.querySelector(".gallery");
 let menu_a = document.querySelector(".wedding");
 let menu_b = document.querySelector(".people");
 let menu_c = document.querySelector(".world");
+let pics_obj = JSON.parse(pics); //convert json string to js object
 
 menu_a.addEventListener("click", updateGallery("a"), false);
 menu_b.addEventListener("click", updateGallery("b"), false);
@@ -13,7 +14,7 @@ let current = "a";
 
 function imageFound(im, dv) {
   return function () {
-    console.log("Image found: " + im.src);
+    // console.log("Image found: " + im.src);
     dv.appendChild(im);
     let h = im.height;
     let w = im.width;
@@ -29,20 +30,22 @@ function imageFound(im, dv) {
 function clearGallery() {
   while (gallery.firstChild) {
     gallery.removeChild(gallery.lastChild);
-    console.log("remove div");
+    // console.log("remove div");
   }
 }
 
 function updateGallery(key) {
   return function () {
-    console.log("update Gallery");
+    // console.log("update Gallery");
+    let filteredPics = Object.values(pics_obj).filter(pic => pic.includes(key));
+    // console.log(filteredPics)
     clearGallery();
-    for (i = 1; i < 100; i++) {
+    for (var i in filteredPics)  {
       imageDiv[i] = document.createElement("div");
       image[i] = new Image();
       image[i].addEventListener("load", imageFound(image[i], imageDiv[i]));
-      image[i].addEventListener("error", () => console.log("Image not found!"));
-      image[i].src = "/static/gallery/" + key + i + ".jpg?v=" + image_version;
+      image[i].addEventListener("error", () => console.log("Image not found!"+i));
+      image[i].src = "/static/gallery/" + filteredPics[i] + "?v=" + image_version;
       gallery.appendChild(imageDiv[i]);
     }
   };

@@ -1,7 +1,7 @@
 import sys
 import subprocess
 sys.path.insert(0, "/var/www/webApp/webApp") #else my mailconfig module doesn't get found for some reason
-from flask import Flask, render_template, url_for, request, redirect, request
+from flask import Flask, render_template, url_for, request, redirect, request, json
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 from datetime import datetime
@@ -64,7 +64,13 @@ def index():
 
 @app.route('/gallery/')
 def gallery():
-    return render_template('gallery.html')
+    pics = list()
+    galleryPath = os.path.join(app.static_folder, 'gallery')
+    for file in os.listdir(galleryPath):
+        if file.endswith(".jpg"):
+            pics.append(file)
+    # print(picsPath, file=sys.stderr)
+    return render_template('gallery.html', pics=json.dumps(pics))
 
 @app.route('/about/')
 def about():
