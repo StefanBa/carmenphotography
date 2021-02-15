@@ -14,7 +14,7 @@ let current = "a";
 
 function imageFound(im, dv) {
   return function () {
-    // console.log("Image found: " + im.src);
+    console.log("Image found: " + im.src);
     dv.appendChild(im);
     let h = im.height;
     let w = im.width;
@@ -38,7 +38,7 @@ function updateGallery(key) {
   return function () {
     // console.log("update Gallery");
     let filteredPics = Object.values(pics_obj).filter(pic => pic.includes(key));
-    // console.log(filteredPics)
+    console.log(filteredPics)
     clearGallery();
     for (var i in filteredPics)  {
       imageDiv[i] = document.createElement("div");
