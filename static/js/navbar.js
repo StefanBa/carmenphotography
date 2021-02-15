@@ -42,7 +42,7 @@ function parallax() {
     let act = currentScrollPos / scrollableHeight;
     let subitemSize = (window.innerHeight / 100) * 3 + 5;
     for (var i = 0; i < subitems.length; i++) {
-      let posx = Math.round(animationStyle.offx[i] * subitemSize + animationStyle.speedx[i] * act * 0.2 * window.innerWidth);
+      let posx = Math.round(animationStyle.offx[i] * subitemSize + animationStyle.speedx[i] * act * 0.15 * window.innerWidth);
       let posy = Math.round(
         animationStyle.offy[i] * subitemSize + animationStyle.speedy[i] * act * 0.2 * window.innerHeight + 0.2 * window.innerHeight
       );
