@@ -38,7 +38,9 @@ function updateGallery(key) {
   return function () {
     // console.log("update Gallery");
     let filteredPics = Object.values(pics_obj).filter(pic => pic.includes(key));
-    console.log(filteredPics)
+    console.log(filteredPics);
+    filteredPics.sort();
+    console.log(filteredPics);
     clearGallery();
     for (var i in filteredPics)  {
       imageDiv[i] = document.createElement("div");
