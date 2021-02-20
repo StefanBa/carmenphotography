@@ -16,16 +16,8 @@ function imageFound(im, dv) {
   return function () {
     // console.log("Image found: " + im.src);
     dv.appendChild(im);
-    let h = im.height;
-    let w = im.width;
-    if (h > w) {
-      dv.setAttribute("style", "height: 100vh; text-align: center; padding: 2vh 0;");
-      im.setAttribute("style", "max-height: 100%; max-width: 100%; width: auto; object-fit: contain");
-    } else {
-      dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0;");
-      im.setAttribute("style", "max-width: 100%; max-height: 100%; height: auto; object-fit: contain");
-    }
-    
+    dv.setAttribute("style", "text-align: center; padding: 2vh 0;");
+    im.setAttribute("style", "max-width: 100vw; max-height: 100vh; height: auto; object-fit: contain");    
   };
 }
 
