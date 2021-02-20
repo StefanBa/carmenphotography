@@ -14,26 +14,22 @@ let current = "a";
 
 function imageFound(im, dv) {
   return function () {
-    // console.log("Image found: " + im.src);
     dv.appendChild(im);
     dv.setAttribute("style", "text-align: center; padding: 2vh 0;");
-    im.setAttribute("style", "max-width: 100vw; max-height: 100vh; height: auto; object-fit: contain");    
+    im.setAttribute("style", "max-width: 100vw; max-height: 100vh; object-fit: contain");    
   };
 }
 
 function clearGallery() {
   while (gallery.firstChild) {
     gallery.removeChild(gallery.lastChild);
-    // console.log("remove div");
   }
 }
 
 function updateGallery(key) {
   return function () {
-    // console.log("update Gallery");
     let filteredPics = Object.values(pics_obj).filter(pic => pic.includes(key));
     filteredPics.sort();
-    // console.log(filteredPics);
     clearGallery();
     for (var i in filteredPics)  {
       imageDiv[i] = document.createElement("div");
