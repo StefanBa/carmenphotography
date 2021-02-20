@@ -81,6 +81,7 @@ nav {
   /* opacity: 50%; */
   /* display: none; */
   /* border: 3px solid blue; */
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 nav .side.logo {
