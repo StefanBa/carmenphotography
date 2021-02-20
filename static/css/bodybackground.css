@@ -8,8 +8,10 @@ body:before {
   content: "";
   display: block;
   position: fixed;
-  left: 0;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  /* margin-left: -960px; */
   height: var(--aboutHeight);
   width: var(--aboutWidth);
   z-index: -10;

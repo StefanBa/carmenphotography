@@ -63,3 +63,8 @@ https://ana-balica.github.io/2014/02/01/autoversioning-static-assets-in-flask/
 
 sudo chmod 777 *
 sudo chown www-data:www-data *
+
+
+imagefolder persistent group rights:
+https://unix.stackexchange.com/questions/1314/how-to-set-default-file-permissions-for-all-folders-files-in-a-directory
+
