@@ -66,6 +66,7 @@ header {
   /* background: blue; */
   /* opacity: 50%; */
   z-index: 2;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 nav {
