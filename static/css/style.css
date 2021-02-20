@@ -67,6 +67,7 @@ header {
   /* opacity: 50%; */
   z-index: 2;
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 nav {
@@ -89,6 +90,7 @@ nav .side.logo {
   margin: 0 0 0 3vw;
   /* border: 3px solid yellow; */
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 2;
 }
 
@@ -98,6 +100,7 @@ nav .side.bt {
   /* border: 3px solid yellow; */
   display: none;
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 2;
 }
 
@@ -109,6 +112,7 @@ nav .side.bars {
   transition: var(--transitionNav);
   /* border: 3px solid yellow; */
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 2;
 }
 
@@ -120,6 +124,7 @@ nav .side i {
   vertical-align: middle;
   /* border: 3px solid green; */
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 2;
 }
 
@@ -131,6 +136,7 @@ nav .side a {
   transition: var(--transitionNav);
   /* border: 3px solid blue; */
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 2;
 }
 
@@ -146,6 +152,7 @@ nav ul {
   overflow-x: hidden;
   transition: var(--transitionNav);
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 3;
 }
 
@@ -161,6 +168,7 @@ nav li a {
   color: black;
   /* border: 3px solid green; */
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 3;
 }
 
@@ -178,6 +186,7 @@ nav li a {
   /* display: none; */
   /* border: 1px solid black; */
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 2;
 }
 
@@ -187,6 +196,7 @@ nav li a {
   text-align: center;
   /* border: 1px solid blue; */
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 2;
 }
 
@@ -199,6 +209,7 @@ nav li a {
   transition: var(--transitionNav);
   /* border: 3px solid yellow; */
   -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 2;
 }
 

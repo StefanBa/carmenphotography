@@ -19,11 +19,13 @@ function imageFound(im, dv) {
     let h = im.height;
     let w = im.width;
     if (h > w) {
-      dv.setAttribute("style", "width: 75vw; text-align: center; padding: 2vh 0;");
+      dv.setAttribute("style", "height: 100vh; text-align: center; padding: 2vh 0;");
+      im.setAttribute("style", "height: 100%; max-width: 100%; width: auto; object-fit: cover");
     } else {
       dv.setAttribute("style", "width: 100vw; text-align: center; padding: 2vh 0;");
+      im.setAttribute("style", "width: 100%; max-height: 100%; height: auto; object-fit: cover");
     }
-    im.setAttribute("style", "width: 100%; max-height: 100%; height: auto; object-fit: cover");
+    
   };
 }
 
