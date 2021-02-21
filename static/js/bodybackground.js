@@ -9,8 +9,8 @@ let mobileBackgroundResize = true;
 
 function resizeBackground() {
   if (x.matches || mobileBackgroundResize) {
-    let viewX = window.outerWidth;
-    let viewY = window.outerHeight;
+    let viewX = window.innerWidth;
+    let viewY = window.innerHeight;
     document.documentElement.style.setProperty("--aboutHeight", viewY + "px");
     document.documentElement.style.setProperty("--aboutWidth", viewX + "px");
     // console.log(viewX, viewY);
