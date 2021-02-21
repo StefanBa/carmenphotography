@@ -2,7 +2,7 @@ let main = document.querySelector(".main");
 let header = document.querySelector("header");
 let path = document.currentScript.getAttribute("path");
 // let before = document.querySelector("body:before");
-let pathString = "url(" + path + ") left/cover no-repeat";
+let pathString = "url(" + path + ") center/cover no-repeat";
 document.documentElement.style.setProperty("--backgroundPath", pathString);
 // console.log(pathString);
 let mobileBackgroundResize = true;
