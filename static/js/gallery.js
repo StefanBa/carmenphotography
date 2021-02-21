@@ -16,7 +16,13 @@ function imageFound(im, dv) {
   return function () {
     dv.appendChild(im);
     dv.setAttribute("style", "text-align: center; padding: 2vh 0;");
-    im.setAttribute("style", "max-width: 100vw; max-height: 100vh; object-fit: contain");    
+    im.setAttribute("style", "max-width: 100vw; max-height: 100vh; object-fit: contain");
+    let h = im.height;
+    let w = im.width;
+    if (w > h) {   
+       dv.setAttribute("style", "width: 100vw; padding: 2vh 0;");
+       im.setAttribute("style", "width: 100vw");
+    }
   };
 }
 
