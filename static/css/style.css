@@ -387,7 +387,7 @@ footer {
   font-family: var(--fontLogo);
 }
 
-@media screen and (min-width: 1081px) {
+@media all and (min-width: 1081px) {
   .subnav .item {
     width: 15vw;
   }
@@ -426,7 +426,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 1601px) {
+@media all and (min-width: 1601px) {
   nav .side.logo {
     width: 25vw;
   }
