@@ -254,10 +254,16 @@ nav li a {
 }
 
 .subitem {
-  height: 3vh;
+  /* height: 3vh;
   width: 3vh;
   position: absolute;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255); */
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 3vh solid transparent;
+  border-right: 3vh solid transparent;
+  border-bottom: 6vh solid rgb(255, 255, 255);
   /* transition: all 0.1s linear 0s; */
 }
 

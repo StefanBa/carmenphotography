@@ -26,6 +26,36 @@ let showNav = {
   action: "big",
 };
 
+// let animationStyle = {
+//   offx: [-1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5],
+//   offy: [1.5, 1.5, 1.5, 1.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -1.5, -1.5, -1.5, -1.5],
+//   speedx: [-0.6, -0.3, 0.4, 0.8, -0.5, -0.1, 0.3, 0.9, -0.8, -0.3, 0.2, 0.3, -0.8, -0.7, 0.4, 0.8],
+//   speedy: [0.8, 0.7, 0.5, 0.9, 0.5, 0.3, 0.2, 0.6, -0.3, -0.6, -0.2, -0.5, -0.6, -0.7, -0.9, -0.8],
+//   opacity: [0.4, 0.5, 0.6, 0.3, 0.5, 0.8, 0.2, 0.7, 0.6, 0.5, 0.9, 0.6, 0.2, 0.3, 0.5, 0.7],
+// };
+
+// function parallax() {
+//   if (background) {
+//     background.style.transform = "translate3d(0, -" + offsety + "px, 0)";
+//     // subboarder.style.transform = "translate3d(0, " + offsety + "px, 0)";
+//     let scrollableHeight = document.body.scrollHeight - window.innerHeight;
+//     let act = currentScrollPos / scrollableHeight;
+//     let subitemSize = (window.innerHeight / 100) * 3 + 5;
+//     for (var i = 0; i < subitems.length; i++) {
+//       let posx = Math.round(animationStyle.offx[i] * subitemSize + animationStyle.speedx[i] * act * 0.15 * window.innerWidth);
+//       let posy = Math.round(
+//         animationStyle.offy[i] * subitemSize + animationStyle.speedy[i] * act * 0.2 * window.innerHeight + 0.2 * window.innerHeight
+//       );
+//       let opa = Math.round((-(1 - animationStyle.opacity[i]) * act + 0.8) * 100) / 100;
+//       subitems[i].style.transform = "translate3d(" + posx + "px," + posy + "px, 0)";
+//       subitems[i].style.opacity = opa;
+//       let size = Math.round((window.innerHeight * Math.abs(animationStyle.speedx[i]) * act * 0.005 + 3) * 100) / 100;
+//       subitems[i].style.width = size + "vh";
+//       subitems[i].style.height = size + "vh";
+//     }
+//   }
+// }
+
 let animationStyle = {
   offx: [-1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5, -1.5, -0.5, 0.5, 1.5],
   offy: [1.5, 1.5, 1.5, 1.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -1.5, -1.5, -1.5, -1.5],
