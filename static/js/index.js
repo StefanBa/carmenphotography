@@ -23,7 +23,8 @@ class Polygon {
 
   update(a) {
     // console.log(act);
-    a = 3*a - 1.5;
+    // a = 3*a - 1.5;
+    a = 1.5*a;
     let s = Math.sin(Math.PI/3);
     let c = 0.5 //sin(pi/3)
     let o = Math.cos(a);
