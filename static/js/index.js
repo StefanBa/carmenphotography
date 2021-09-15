@@ -78,7 +78,7 @@ class Polygon {
     this.translates = translation;
     this.node.setAttribute("points", "0,0 0.5,0.866 -0.5,0.866");
     console.log(this.startRot);
-    this.node.setAttribute("style", "fill:white; stroke: black; stroke-width:0.03; stroke-opacity: 0.5; opacity:0.7; transition: all 0.5s ease-out 0s;" );
+    this.node.setAttribute("style", "fill:white; stroke: black; stroke-width:0.03; stroke-opacity: 0.5; opacity:0.7; transition: all 0.5s;" );
     svg.appendChild(this.node);
   }
 
@@ -90,7 +90,7 @@ class Polygon {
     this.node.style.transform = 
       " rotate(" + a + "rad) \
       translate(" + xtranslates + "%," + ytranslates + "%) \
-      rotate(" + angle + "rad)";
+      rotate(" + angle + "rad) ";
   };
 }
 
