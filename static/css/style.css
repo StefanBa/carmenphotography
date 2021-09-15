@@ -259,6 +259,7 @@ nav li a {
   /* border: 3px solid blue; */
   width: 40vh;
   height: 40vh;
+  transition: all 1s ease 0s;
 }
 
 .subitem {
