@@ -73,12 +73,11 @@ svg.setAttribute("viewBox", "-2.5 -2.5 5 5");
 //Animations
 class Polygon {
   constructor(startRotation, translation) {
-    this.node = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
     this.startRot = startRotation*Math.PI/3;
     this.translates = translation;
+    this.node = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
     this.node.setAttribute("points", "0,0 0.5,0.866 -0.5,0.866");
-    console.log(this.startRot);
-    this.node.setAttribute("style", "fill:white; stroke: black; stroke-width:0.03; stroke-opacity: 0.5; opacity:0.7; transition: all 0.5s;" );
+    this.node.setAttribute("style", "fill:white; stroke: black; stroke-width:0.03; stroke-opacity: 0.5; opacity:0.7;" );
     svg.appendChild(this.node);
   }
 
@@ -86,11 +85,7 @@ class Polygon {
     a = 1.5*a;
     let xtranslates = this.translates[0]*a*20; //have to multiply by 20 because transform doesnt seem to work with user units, so use % instead
     let ytranslates = this.translates[1]*a*20;
-    let angle = this.startRot;
-    this.node.style.transform = 
-      " rotate(" + a + "rad) \
-      translate(" + xtranslates + "%," + ytranslates + "%) \
-      rotate(" + angle + "rad) ";
+    this.node.style.transform = " rotate(" + a + "rad) translate(" + xtranslates + "%," + ytranslates + "%) rotate(" + this.startRot + "rad) ";
   };
 }
 
@@ -101,7 +96,6 @@ let blades = []
 for (let i = 0; i<6; i++){
   blades[i] = new Polygon(startRotations[i],translations[i]);
 }
-
 
 //parallax background
 function animateBackground(currentScrollPos){
