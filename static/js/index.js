@@ -70,6 +70,8 @@ svg.setAttribute("viewBox", "-2.5 -2.5 5 5");
 //   blades[i] = new Polygon(equationsX[i],equationsY[i]);
 // }
 
+
+
 //Animations
 class Polygon {
   constructor(startRotation, translation) {
@@ -78,11 +80,12 @@ class Polygon {
     this.node = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
     this.node.setAttribute("points", "0,0 0.5,0.866 -0.5,0.866");
     this.node.setAttribute("style", "fill:white; stroke: black; stroke-width:0.03; stroke-opacity: 0.5; opacity:0.7;" );
+    this.node.setAttribute("clip-path", "url(#clippy)");
     svg.appendChild(this.node);
   }
 
   update(a) {
-    a = 1.5*a;
+    // a = 1.3*a;
     let xtranslates = this.translates[0]*a*20; //have to multiply by 20 because transform doesnt seem to work with user units, so use % instead
     let ytranslates = this.translates[1]*a*20;
     this.node.style.transform = " rotate(" + a + "rad) translate(" + xtranslates + "%," + ytranslates + "%) rotate(" + this.startRot + "rad) ";
@@ -96,6 +99,11 @@ let blades = []
 for (let i = 0; i<6; i++){
   blades[i] = new Polygon(startRotations[i],translations[i]);
 }
+
+let irisCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+irisCircle.setAttribute("r","1");
+irisCircle.setAttribute("style", "fill-opacity:0; stroke: black; stroke-width:0.03; stroke-opacity: 1;" );
+svg.appendChild(irisCircle);
 
 //parallax background
 function animateBackground(currentScrollPos){
