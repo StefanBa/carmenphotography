@@ -441,7 +441,8 @@ footer {
   }
 }
 
-@media screen and (min-width: 1601px), (min-width: 801px) and (-webkit-min-device-pixel-ratio: 2) {
+/* @media screen and (min-width: 1601px), (min-width: 801px) and (-webkit-min-device-pixel-ratio: 2) { */
+@media screen and (min-width: 1601px) {
   nav .side.logo {
     width: 25vw;
   }

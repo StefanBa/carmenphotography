@@ -5,8 +5,8 @@ let subnav = document.querySelector(".subnav");
 let foreground = document.querySelector(".foreground");
 let viewMode = "DesktopWide";
 // let currentScrollPos = 0;
-// console.log("window.innerWidth = " + window.innerWidth);
-// console.log("window.devicePixelRatio = " + window.devicePixelRatio);
+console.log("window.innerWidth = " + window.innerWidth);
+console.log("window.devicePixelRatio = " + window.devicePixelRatio);
 
 let navDimensions = {
   mainBig: "10vh",
@@ -185,7 +185,8 @@ menu.addEventListener("click", showHideMenu("toggle"));
 foreground.addEventListener("click", showHideMenu("hide"));
 
 let x = window.matchMedia("(min-width: 1281px)");
-let d = window.matchMedia("(min-width: 1601px) , (min-width: 801px) and (-webkit-min-device-pixel-ratio: 2)");
+let d = window.matchMedia("(min-width: 1601px)");
+// let d = window.matchMedia("(min-width: 1601px) , (min-width: 801px) and (-webkit-min-device-pixel-ratio: 2)");
 d.addListener(showHideMenu()); // Attach listener function on state changes
 x.addListener(showHideMenu()); // Attach listener function on state changes
 d.addListener(mouseOnNav); // Attach listener function on state changes
