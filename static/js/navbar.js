@@ -5,6 +5,7 @@ let subnav = document.querySelector(".subnav");
 let foreground = document.querySelector(".foreground");
 let viewMode = "DesktopWide";
 // let currentScrollPos = 0;
+console.log(window.innerWidth);
 
 let navDimensions = {
   mainBig: "10vh",
