@@ -61,6 +61,7 @@ class Iris {
   clear(){
     for (let i = 0; i<this.n_blades; i++){
       this.blades[i].clear();
+      this.blades[i] = null;
     }
     this.blades = [];
   }
