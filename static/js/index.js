@@ -10,7 +10,6 @@ let subboarder = document.querySelector(".subboarder");
 let background = document.querySelector(".background");
 let svg = document.querySelector("svg");
 svg.setAttribute("viewBox", "-2.5 -2.5 5 5");
-let irisblades = 5;
 
 //Animations
 class Polygon {
