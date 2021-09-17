@@ -247,35 +247,12 @@ nav li a {
   /* border: 3px solid black; */
 }
 
-.subboarder {
-  display: none;
-  position: relative;
-  /* border: 3px solid purple; */
-  width: 0vw;
-  height: 0vh;
-}
-
 .svg {
   /* border: 3px solid blue; */
   width: 40vh;
   height: 40vh;
   clip-path: circle(8.005vh at center);
 }
-
-.subitem {
-  height: 3vh;
-  width: 3vh;
-  position: absolute;
-  background-color: rgb(255, 255, 255);
-  /* width: 0;
-  height: 0;
-  position: absolute;
-  border-left: 3vh solid transparent;
-  border-right: 3vh solid transparent;
-  border-bottom: 6vh solid rgb(255, 255, 255); */
-  /* transition: all 0.1s linear 0s; */
-}
-
 .gallery {
   display: flex;
   flex-direction: column;
@@ -402,7 +379,7 @@ footer {
   font-family: var(--fontLogo);
 }
 
-@media screen and (min-width: 1081px) {
+@media screen and (min-width: 1171px) {
   .subnav .item {
     width: 15vw;
   }
@@ -441,8 +418,7 @@ footer {
   }
 }
 
-/* @media screen and (min-width: 1601px), (min-width: 801px) and (-webkit-min-device-pixel-ratio: 2) { */
-@media screen and (min-width: 1601px) {
+@media screen and (min-width: 1499px) {
   nav .side.logo {
     width: 25vw;
   }
