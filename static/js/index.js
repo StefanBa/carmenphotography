@@ -91,7 +91,6 @@ function animateAll() {
   let currentScrollPos = window.pageYOffset;
   let act = currentScrollPos / scrollableHeight; 
   animateBackground(currentScrollPos)
-  animateSquares(act)
   iris.update(act);
 }
 
