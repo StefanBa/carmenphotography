@@ -73,7 +73,7 @@ let irisCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle"
 irisCircle.setAttribute("r","1");
 irisCircle.setAttribute("style", "fill-opacity:0; stroke: black; stroke-width:0.03; stroke-opacity: 1;" );
 let iris = new Iris();
-iris.init(3);
+iris.init(5);
 
 svg.addEventListener("click", function(){
   iris.clear();
