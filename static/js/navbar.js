@@ -184,8 +184,8 @@ function checkWideMode() {
 menu.addEventListener("click", showHideMenu("toggle"));
 foreground.addEventListener("click", showHideMenu("hide"));
 
-let x = window.matchMedia("(min-width: 1281px)");
-let d = window.matchMedia("(min-width: 1601px)");
+let x = window.matchMedia("(min-width: 1171px)");
+let d = window.matchMedia("(min-width: 1499px)");
 // let d = window.matchMedia("(min-width: 1601px) , (min-width: 801px) and (-webkit-min-device-pixel-ratio: 2)");
 d.addListener(showHideMenu()); // Attach listener function on state changes
 x.addListener(showHideMenu()); // Attach listener function on state changes
