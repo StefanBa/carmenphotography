@@ -249,8 +249,8 @@ nav li a {
 
 .svg {
   /* border: 3px solid blue; */
-  width: 40vh;
-  height: 40vh;
+  width: 45vh; /* it would be 40 but zoom it up, so the outer edges of triangles are not visible */
+  height: 45vh;
   clip-path: circle(8.005vh at center);
 }
 .gallery {

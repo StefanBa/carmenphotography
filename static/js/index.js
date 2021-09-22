@@ -19,12 +19,15 @@ class Polygon {
     let startPoint = [Math.cos(this.theta/2), Math.sin(this.theta/2)];
     this.node = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
     this.node.setAttribute("points", "0,0 " + startPoint[0] + "," + startPoint[1] + " " + startPoint[0] + "," + (-startPoint[1]));
-    this.node.setAttribute("style", "fill:white; stroke: black; stroke-width:0.03; stroke-opacity: 0.5; opacity:0.7;" );
+    this.node.setAttribute("style", "fill:white; opacity:0.7;" );
     svg.appendChild(this.node);
   }
 
   update(a) {
-    this.node.style.transform = "rotate(" + a + "rad)  rotate(" + this.n*this.theta + "rad) translate(0," + (a*20) + "%)";
+    let translate = -a*20+20;
+    let rotate = -a;
+    let border = 0.05;
+    this.node.style.transform = "rotate(" + rotate + "rad)  rotate(" + this.n*this.theta + "rad)  translate("+(border*20)+"%," + translate + "%) scale("+(1-border)+") ";
   };
 
   clear(){
@@ -46,7 +49,7 @@ class Iris {
     for (let i = 0; i<this.n_blades; i++){
       this.blades[i] = new Polygon(i,this.n_blades);
     }
-    svg.appendChild(irisCircle);
+    // svg.appendChild(irisCircle);
   }
 
   update(a){
@@ -61,23 +64,33 @@ class Iris {
       this.blades[i] = null;
     }
     this.blades = [];
-    svg.removeChild(irisCircle);
+    // svg.removeChild(irisCircle);
   }
 
-  increse(){
-    this.n_blades++;
+  changeblades(i){
+    this.n_blades = this.n_blades+i;
+    if (this.n_blades < 3){
+      this.n_blades = 3;
+    }
   }
 }
 
-let irisCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-irisCircle.setAttribute("r","1");
-irisCircle.setAttribute("style", "fill-opacity:0; stroke: black; stroke-width:0.03; stroke-opacity: 1;" );
+// let irisCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+// irisCircle.setAttribute("r","1");
+// irisCircle.setAttribute("style", "fill-opacity:0; stroke: black; stroke-width:0.03; stroke-opacity: 1;" );
 let iris = new Iris();
-iris.init(5);
+iris.init(9);
 
 svg.addEventListener("click", function(){
   iris.clear();
-  iris.increse();
+  iris.changeblades(1);
+  iris.init();
+});
+
+svg.addEventListener("contextmenu", function(ev){
+  ev.preventDefault(); //don't show context menu
+  iris.clear();
+  iris.changeblades(-1);
   iris.init();
 });
 
