@@ -19,7 +19,7 @@ class Polygon {
     let startPoint = [Math.cos(this.theta/2), Math.sin(this.theta/2)];
     this.node = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
     this.node.setAttribute("points", "0,0 " + startPoint[0] + "," + startPoint[1] + " " + startPoint[0] + "," + (-startPoint[1]));
-    this.node.setAttribute("style", "fill:white; opacity:0.7;" );
+    this.node.setAttribute("style", "fill:white; opacity:0.6;" );
     svg.appendChild(this.node);
   }
 
