@@ -24,8 +24,8 @@ class Polygon {
   }
 
   update(a) {
-    let translate = -a*20+20;
-    let rotate = -a;
+    let translate = a*20-20;
+    let rotate = a;
     let border = 0.05;
     this.node.style.transform = "rotate(" + rotate + "rad)  rotate(" + this.n*this.theta + "rad)  translate("+(border*20)+"%," + translate + "%) scale("+(1-border)+") ";
   };
