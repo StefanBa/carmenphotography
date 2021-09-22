@@ -24,6 +24,7 @@ class Polygon {
   }
 
   update(a) {
+    a = 1.5*a;
     let translate = a*20-20;
     let rotate = a;
     let border = 0.05;
