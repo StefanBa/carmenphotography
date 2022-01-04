@@ -50,7 +50,7 @@ body {
 
 .foreground {
   width: 100vw;
-  z-index: 1;
+  /* z-index: 1; */
   /* border: 3px solid red; */
 }
 
@@ -59,9 +59,9 @@ header {
   position: sticky;
   top: 0;
   height: var(--headerHeight);
-  z-index: 2;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  /* z-index: 2; */
   /* border: 3px solid green; */
 }
 
@@ -73,27 +73,26 @@ nav {
   justify-content: space-between;
   align-items: center;
   background: white;
-  z-index: 2;
+  /* -webkit-transform: translate3d(0, 0, 0); */
+  /* transform: translate3d(0, 0, 0); */
   /* border: 3px solid blue; */
 }
 
 nav .side.logo {
   width: 75vw;
   margin: 0 0 0 3vw;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   /* border: 3px solid yellow; */
-  /* -webkit-transform: translate3d(0, 0, 0); */
-  /* transform: translate3d(0, 0, 0); */
-  z-index: 2;
 }
 
 nav .side.bt {
   width: 25vw;
   margin: 0 3vw 0 0;
-  /* border: 3px solid yellow; */
   display: none;
-  /* -webkit-transform: translate3d(0, 0, 0); */
-  /* transform: translate3d(0, 0, 0); */
-  z-index: 2;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  /* border: 3px solid yellow; */
 }
 
 nav .side.bars {
@@ -102,18 +101,21 @@ nav .side.bars {
   height: var(--navHeight);
   text-align: center;
   transition: var(--transitionNav);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   /* border: 3px solid yellow; */
-  z-index: 2;
 }
 
 nav .side i {
+  position: absolute;
   color: grey;
   font-size: calc(var(--navHeight) * 0.5);
   transition: var(--transitionNav);
   line-height: var(--navHeight);
   vertical-align: middle;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   /* border: 3px solid green; */
-  z-index: 2;
 }
 
 nav .side a {
@@ -122,12 +124,12 @@ nav .side a {
   font-family: var(--fontLogo);
   font-size: calc(var(--navHeight) * 0.25);
   transition: var(--transitionNav);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   /* border: 3px solid blue; */
-  z-index: 2;
 }
 
 nav ul {
-  /* border: 3px solid magenta; */
   justify-self: center;
   list-style: none;
   position: absolute;
@@ -137,7 +139,10 @@ nav ul {
   background-color: rgba(255, 255, 255, 0.925);
   overflow-x: hidden;
   transition: var(--transitionNav);
-  z-index: 3;
+  z-index: 2;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  /* border: 3px solid magenta; */
 }
 
 nav li a {
@@ -150,8 +155,9 @@ nav li a {
   font-size: calc(var(--navHeightMobile) * 0.19);
   text-decoration: none;
   color: black;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   /* border: 3px solid green; */
-  z-index: 3;
 }
 
 .subnav {
@@ -162,20 +168,20 @@ nav li a {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: var(--navHeight);
-  z-index: 1;
   transition: var(--transitionNav);
   overflow-y: hidden;
-  /* display: none; */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   /* border: 1px solid black; */
-  z-index: 2;
 }
 
 .subnav .item {
   background-color: rgba(255, 255, 255, 0.418);
   width: 33.33vw;
   text-align: center;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   /* border: 1px solid blue; */
-  z-index: 2;
 }
 
 .subnav a {
@@ -185,8 +191,9 @@ nav li a {
   font-family: var(--fontNav);
   font-size: calc(var(--navHeightMobile) * 0.19);
   transition: var(--transitionNav);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   /* border: 3px solid yellow; */
-  z-index: 2;
 }
 
 .main {
@@ -195,7 +202,6 @@ nav li a {
   flex-direction: column;
   justify-content: center;
   color: white;
-  z-index: 1;
   /* border: 3px solid rgb(128, 94, 0); */
 }
 
@@ -206,6 +212,12 @@ nav li a {
   height: 150vh;
   display: flex;
   /* border: 3px solid red; */
+}
+
+.home .spacer {
+  display: none;
+  height: 20vh;
+  border: 3px solid red;
 }
 
 .title {
