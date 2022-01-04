@@ -1,85 +1,16 @@
+import Iris from './Iris.js'
+
 let main = document.querySelector(".main");
 let header = document.querySelector("header");
-let imagePath = document.currentScript.getAttribute("path");
-// console.log(imagePath);
+let imagePath = document.getElementById('myscript').getAttribute("path");
 let imageX = 0;
 let imageY = 0;
 let mobileBackgroundResize = true;
-let subitems = document.querySelectorAll(".subitem");
-let subboarder = document.querySelector(".subboarder");
 let background = document.querySelector(".background");
 let svg = document.querySelector("svg");
 svg.setAttribute("viewBox", "-2.5 -2.5 5 5");
 
-//Animations
-class Polygon {
-  constructor(n, tot) {
-    this.n = n;
-    this.theta = 2*Math.PI/tot;
-    let startPoint = [Math.cos(this.theta/2), Math.sin(this.theta/2)];
-    this.node = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-    this.node.setAttribute("points", "0,0 " + startPoint[0] + "," + startPoint[1] + " " + startPoint[0] + "," + (-startPoint[1]));
-    this.node.setAttribute("style", "fill:white; opacity:0.6;" );
-    svg.appendChild(this.node);
-  }
-
-  update(a) {
-    a = 1.5*a;
-    let translate = a*20-20;
-    let rotate = a;
-    let border = 0.05;
-    this.node.style.transform = "rotate(" + rotate + "rad)  rotate(" + this.n*this.theta + "rad)  translate("+(border*20)+"%," + translate + "%) scale("+(1-border)+") ";
-  };
-
-  clear(){
-    svg.removeChild(this.node);
-  }
-}
-
-class Iris {
-  constructor(){
-    this.blades = [];
-    this.n_blades = 0;
-  }
-
-  init(startblades){
-    if(startblades){
-      this.n_blades = startblades;
-    }
-    
-    for (let i = 0; i<this.n_blades; i++){
-      this.blades[i] = new Polygon(i,this.n_blades);
-    }
-    // svg.appendChild(irisCircle);
-  }
-
-  update(a){
-    for (let i = 0; i<this.n_blades; i++){
-      this.blades[i].update(a);
-    }
-  }
-
-  clear(){
-    for (let i = 0; i<this.n_blades; i++){
-      this.blades[i].clear();
-      this.blades[i] = null;
-    }
-    this.blades = [];
-    // svg.removeChild(irisCircle);
-  }
-
-  changeblades(i){
-    this.n_blades = this.n_blades+i;
-    if (this.n_blades < 3){
-      this.n_blades = 3;
-    }
-  }
-}
-
-// let irisCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-// irisCircle.setAttribute("r","1");
-// irisCircle.setAttribute("style", "fill-opacity:0; stroke: black; stroke-width:0.03; stroke-opacity: 1;" );
-let iris = new Iris();
+let iris = new Iris(svg);
 iris.init(9);
 
 svg.addEventListener("click", function(){
@@ -101,7 +32,6 @@ function animateBackground(currentScrollPos){
 }
 
 function animateAll() {    
-  // subboarder.style.transform = "translate3d(0, " + offsety + "px, 0)";
   let scrollableHeight = document.body.scrollHeight - window.innerHeight;
   let currentScrollPos = window.pageYOffset;
   let act = currentScrollPos / scrollableHeight; 
