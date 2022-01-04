@@ -107,7 +107,6 @@ nav .side.bars {
 }
 
 nav .side i {
-  position: absolute;
   color: grey;
   font-size: calc(var(--navHeight) * 0.5);
   transition: var(--transitionNav);
