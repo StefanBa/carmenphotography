@@ -8,7 +8,6 @@
 
 {%endblock%} {%block script%}
 
-<script src="{{ url_for('static', filename='js/index.js') |autoversion}}" path="{{ url_for('static', filename='images/title.jpg') |autoversion}}"></script>
-<!-- <script src="../js/background.js" path="../images/mountain.jpg"></script> -->
+<script src="{{ url_for('static', filename='js/index.js') |autoversion}}" path="{{ url_for('static', filename='images/title.jpg') |autoversion}}" type="module" id="myscript"></script>
 {%endblock%}
 

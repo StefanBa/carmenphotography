@@ -253,6 +253,7 @@ nav li a {
   height: 45vh;
   clip-path: circle(8.005vh at center);
 }
+
 .gallery {
   display: flex;
   flex-direction: column;
