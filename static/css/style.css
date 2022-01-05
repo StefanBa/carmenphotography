@@ -22,6 +22,7 @@ font-family: 'Marcellus SC', serif;*/
   --subnavHeight: 8vh;
   --navHeightMobile: 10vh;
   --headerHeight: 8vh;
+  --mainHeight: 72vh;
   --footerHeight: 20vh;
 }
 
@@ -86,9 +87,7 @@ nav .side.logo {
   /* border: 3px solid yellow; */
 }
 
-nav .side.bt {
-  width: 25vw;
-  margin: 0 3vw 0 0;
+nav .side button {
   display: none;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -197,6 +196,7 @@ nav li a {
 
 .main {
   width: 100vw;
+  min-height: var(--mainHeight);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -272,19 +272,14 @@ nav li a {
   /* border: 3px solid blue; */
 }
 
-.contact {
-  /* height: 70vh; */
-  padding: 0 5vw;
+form {
+  padding: 10vh 5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   /* background: url(./images/nikon2.jpeg) center/cover; */
   /* border: 3px solid blue; */
-}
-
-.contact .spacer {
-  height: 10vh;
 }
 
 #url1 {
@@ -298,7 +293,7 @@ nav li a {
   color: rgba(0, 0, 0, 0);
 }
 
-.contact .input {
+.input {
   display: block;
   width: 100%;
   font-size: 5vw;
@@ -309,11 +304,11 @@ nav li a {
   border: 2px solid white;
 }
 
-.contact .input::placeholder {
+.input::placeholder {
   color: white;
 }
 
-.contact .submit {
+.submit {
   width: 50%;
   cursor: pointer;
   /* background: white; */
@@ -391,11 +386,14 @@ footer {
     padding: 3vw;
     font-size: 1.3rem;
   }
-  .contact {
+
+  form {
     align-items: flex-start;
+    max-width: 44vw;
+    /* border: 2px solid yellow; */
   }
 
-  .contact .input {
+  .input {
     font-size: 3vh;
   }
 }
@@ -410,6 +408,9 @@ footer {
 
   nav .side.bt {
     display: block;
+    width: 25vw;
+    margin: 0 3vw 0 0;
+    /* border: 3px solid yellow; */
   }
 
   nav .side.bars {
@@ -417,6 +418,7 @@ footer {
   }
 
   nav .side button {
+    display: block;
     float: right;
     padding: 0.4vh 1.5vw;
     border-radius: 2.4vh;
@@ -424,16 +426,17 @@ footer {
     background: none;
     border: 2px solid white;
     cursor: pointer;
-    transition: all 1s ease 0.1s;
+    transition: var(--transitionNav);
   }
 
   nav .side button:hover {
-    border: 2px solid black;
+    border: 2px solid #aaa;
   }
 
   nav .side button:focus {
     outline: 0 !important;
   }
+
   nav ul {
     justify-self: center;
     height: auto;
@@ -463,5 +466,9 @@ footer {
     border-left: 1px solid black;
     border-right: 1px solid black;
     width: 14vw;
+  }
+
+  nav li:last-child {
+    display: none;
   }
 }

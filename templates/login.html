@@ -1,0 +1,13 @@
+{% extends 'base.html'%} {%block head%} <title>carmen photography - contact</title> {%endblock%} {%block body%}
+  <form id="myform" action="/login/" method="POST">
+    <!--id vom input gleich wie for vom label, deshalb spring cursor in input wenn man aufs label klickt-->
+    <input type="text" name="email" class="input" id="email" placeholder="eMail" />
+    <br />
+    <input type="text" name="password" class="input" id="password" placeholder="Password" /><br />
+    <input type="text" name="url1" class="input" id="url1" placeholder="URL1" />
+    <input type="submit" value="Login" class="input submit" />
+  </form>
+{%endblock%}
+{%block script%}
+<script src="{{ url_for('static', filename='js/bodybackground.js') |autoversion}}" path="{{ url_for('static', filename='images/contact.jpeg') |autoversion}}"></script>
+{%endblock%}

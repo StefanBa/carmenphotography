@@ -1,5 +1,5 @@
 let t0 = performance.now();
-let submitBtn = document.querySelector(".contact .submit");
+let submitBtn = document.querySelector(".submit");
 let vorname = document.getElementById("vorname");
 let nachname = document.getElementById("nachname");
 let email = document.getElementById("email");

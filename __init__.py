@@ -4,6 +4,7 @@ sys.path.insert(0, "/var/www/webApp/webApp") #else my mailconfig module doesn't 
 from flask import Flask, render_template, url_for, request, redirect, request, json
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
+from flask_login import LoginManager
 from datetime import datetime
 import logging
 import subprocess
@@ -15,6 +16,11 @@ app = Flask(__name__)
 # four forwardslashes would be absolute path, three are relative.
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///c_base.db'
 db = SQLAlchemy(app)
+
+
+# login_manager = LoginManager()
+# login_manager.init_app(app)
+
 
 category =	{
     "wedding": "Hochzeitsanlass",
@@ -112,6 +118,19 @@ def contact():
 @app.route('/thanks/')
 def contact2():
     return render_template('thanks.html')
+
+@app.route('/login/', methods=['POST', 'GET'])
+def login():
+    if request.method == 'POST':
+        if request.form['url1'] != "":
+            return render_template('contact.html') #it's a bot!
+        email = request.form['email']
+        password = request.form['password']
+        # if email == mailconfig.mail_settings['MAIL_USERNAME'] and password == mailconfig.mail_settings['MAIL_PASSWORD']:
+        if email == "e" and password == "e":
+            app.logger.info("logged in")
+            return render_template('index.html')
+    return render_template('login.html')
 
 @app.route('/update/', methods=['POST'])
 def update():
