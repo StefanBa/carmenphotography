@@ -17,7 +17,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///c_base.db'
 db = SQLAlchemy(app)
 
-
 # login_manager = LoginManager()
 # login_manager.init_app(app)
 
@@ -66,6 +65,8 @@ def autoversion_filter(filename):
 
 @app.route('/')
 def index():
+    app.logger.info("home")
+    app.logger.info(sys.version)
     return render_template('index.html')
 
 @app.route('/gallery/')
