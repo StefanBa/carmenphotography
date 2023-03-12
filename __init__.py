@@ -140,5 +140,9 @@ def update():
     subprocess.Popen(['sudo','/home/ubuntu/Desktop/gitpull.sh'])
     return ("webhook", 200, None)
 
+@app.route('/beer/')
+def bier():
+    return render_template('beer.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

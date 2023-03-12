@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bierkultur</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/beerstyle.css') |autoversion}}" />
+    <script src="{{ url_for('static', filename='js/beerview.js') |autoversion}}"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="#" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <!-- https://stackoverflow.com/questions/31767904/why-is-document-documentelement-clientwidth-980px-on-mobile-phone -->
+  </head>
+  <body>
+    <div class="page" id="home">
+      <!-- <div class="border"></div> -->
+      <div class="all">
+        <div class="preNav"></div>
+        <nav>
+          <div class="logo">
+            <a href="#home">
+              <img src= "{{url_for('static', filename='beerimages/1920x1080 Logo.png') |autoversion}}" alt="logo" />
+            </a>
+          </div>
+          <ul>
+            <li><a href="#beer">Beer</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#where2">Where</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="chapter" id="title">
+          <div class="titleimage">
+            <img
+              src= "{{url_for('static', filename='beerimages/closeglasscut.png') |autoversion}}"
+              alt="titleimage"
+              class="background"
+            />
+            <img src="{{url_for('static', filename='beerimages/Logo.png') |autoversion}}"
+            alt="" class="logo" />
+          </div>
+        </div>
+        <div class="chapter" id="beer">
+          <div class="header">Bier</div>
+          <div class="beergallery">
+            <div class="beer">
+              <img
+                src= "{{url_for('static', filename='beerimages/Etikette_Damascus.png') |autoversion}}"
+                alt="beer"
+                class="beerimage"
+              />
+              <div class="etiquette">
+                <div class="beertext">Damascus:<br />Frisches Amber</div>
+              </div>
+            </div>
+            <div class="beer">
+              <img
+                src= "{{url_for('static', filename='beerimages/Etikette_Edinburgh.png') |autoversion}}"
+                alt="beer"
+                class="beerimage"
+              />
+              <div class="etiquette">
+                <div class="beertext">Edinburgh:<br />Kräftiges Stout</div>
+              </div>
+            </div>
+            <div class="beer">
+              <img
+                src= "{{url_for('static', filename='beerimages/Etikette_Amsterdam.png') |autoversion}}"
+                alt="beer"
+                class="beerimage"
+              />
+              <div class="etiquette">
+                <div class="beertext">Amsterdam:<br />Hopfenbetontes IPA</div>
+              </div>
+            </div>
+            <div class="beer">
+              <img
+                src="{{url_for('static', filename='beerimages/Etikette_Malaga.png') |autoversion}}"
+                alt="beer"
+                class="beerimage"
+              />
+              <div class="etiquette">
+                <div class="beertext">
+                  <div class="beertext">Malaga:<br />Malzbetontes Bockbier</div>
+                </div>
+              </div>
+            </div>
+            <div class="beer soon">
+              <img src="{{url_for('static', filename='beerimages/bottle.svg') |autoversion}}"
+              alt="beer" class="beerimage" />
+              <div class="etiquette">
+                <div class="beertext">Coming soon</div>
+              </div>
+            </div>
+            <div class="beer soon">
+              <img src="{{url_for('static', filename='beerimages/bottle.svg') |autoversion}}"
+              alt="beer" class="beerimage" />
+              <div class="etiquette">
+                <div class="beertext">Coming soon</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter" id="story">
+          <div class="header">Handgemacht und frisch</div>
+          <div class="colswitch">
+            <div class="brew-image">
+              <img
+                src= "{{url_for('static', filename='beerimages/BrauprozessWebsite.png') |autoversion}}"
+                alt=""
+                class="brewimage unmarked"
+              />
+            </div>
+            <div class="brewtext">
+              <div class="carousel" data-carousel>
+                <ul data-slides>
+                  <li class="slide" data-active>
+                    <p class="brauprozess">
+                      Ein handwerklich gebrautes Bier ist ein wahrer Genuss für
+                      jeden Bierliebhaber. Unser Bier wird in kleinen Mengen
+                      hergestellt und ist bekannt für seinen einzigartigen
+                      Geschmack und seine Aromen. Unser Bier gibt es in
+                      verschiedenen Sorten, von leichten Pilsenern bis hin zu
+                      schweren und kräftigen Stouts. Jede Sorte hat ihre eigenen
+                      Aromen und Eigenschaften, die von der Art der verwendeten
+                      Zutaten und der Brautechnik abhängen. Jeder Schritt im
+                      Brauprozess wird sorgfältig überwacht und optimiert, um
+                      sicherzustellen, dass das Bier den gewünschten Geschmack
+                      und das gewünschte Aroma hat.
+                    </p>
+                  </li>
+                  <li class="slide">
+                    <p class="maischen">
+                      Geschrotete Malzkörner werden in warmes Wasser gegeben, um
+                      die im Malz enthaltene Enzyme zu aktivieren. Diese Enzyme
+                      spalten die im Malz enthaltene Stärke in Zucker auf. Je
+                      nach Braumethode und Ziel des Brauers kann das Maischen
+                      unterschiedlich lange dauern und bei verschiedenen
+                      Temperaturen durchgeführt werden, um bestimmte Geschmacks-
+                      und Aromaeigenschaften im fertigen Bier zu erzielen.
+                    </p>
+                  </li>
+                  <li class="slide">
+                    <p class="lautern">
+                      Die Würze wird von den festen Malzbestandteilen getrennt.
+                      Der sogenannte Treber wird durch eine Siebschicht
+                      zurückgehalten und die klare Würze läuft in den
+                      Kochkessel. Um auch die an den Körnern noch haftenden
+                      Bestandteile gewinnen zu können, wird der Treber noch
+                      zusätzlich mit warmem Wasser ausgewaschen. Das Ergebnis
+                      ist eine klare und saubere Würze.
+                    </p>
+                  </li>
+                  <li class="slide">
+                    <p class="kochen">
+                      Die klare Würze wird gekocht, um Fehlaromen im fertigen
+                      Bier zu entfernen und die Flüssigkeit zu sterilisieren.
+                      Währen des Kochens kommt der Hopfen in die Würze, welche
+                      ihre Bitter- und Aromastoffe der Flüssigkeit übergibt.
+                      Dabei spielt der Zeitpunkt und die Dauer der Hopfengabe
+                      eine entscheidende Rolle im Brauprozess und bestimmt
+                      massgeblich den Geschmack des Bieres.
+                    </p>
+                  </li>
+                  <li class="slide">
+                    <p class="vergaren">
+                      Die heisse Würze wird heruntergekühlt und in den Gärtank
+                      geleitet. Die Hefe wird vorsichtig aufbereitet und dem
+                      unvergorenen Bier zugegeben. Beim Vergären werden die nun
+                      in der Würze enthaltenen Zucker durch die Hefe zu
+                      Kohlensäure und Alkohol verarbeitet. Je nach Hefe und
+                      Bierstil dauert dieser Vorgang einige Tage bis mehrere
+                      Wochen.
+                    </p>
+                  </li>
+                  <li class="slide">
+                    <p class="filtern">
+                      Trübstoffe und verbliebene Hefezellen befinden sich nun
+                      noch in der Flüssigkeit. Um ein klares Bier zu erzielen
+                      werden diese festen Bestandteile nun herausgefiltert.
+                    </p>
+                  </li>
+                  <li class="slide">
+                    <p class="lagern">
+                      Um den Geschmack und die Qualität des Bieres zu
+                      verbessern, wird es kühl und dunkel gelagert. Die Aromen
+                      und Geschmacksstoffe reifen und das Bier wird runder und
+                      homogener.
+                    </p>
+                  </li>
+                  <li class="slide">
+                    <p class="abfullen">
+                      Ist die nötige Reife erreicht, wird das Bier in Flaschen
+                      abgefüllt. Ein langer Weg findet seine Bestimmung in einer
+                      Geschmacksexplosieon in Nase und Gaumen.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="buttons">
+                <button
+                  class="carousel-button-prev"
+                  data-carousel-button="prev"
+                >
+                  &#xab;
+                </button>
+                <button
+                  class="carousel-button-next"
+                  data-carousel-button="next"
+                >
+                  &#xbb;
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chapter" id="where2"></div>
+        <div class="chapter" id="where">
+          <div class="header">Erhältlich</div>
+          <div class="colswitch">
+            <div class="getable">
+              <a href="https://cafe-damascus.ch/">
+                <div class="getableicon damaskus">
+                  <img src= "{{url_for('static', filename='beerimages/Logo_Cafe_Damascus.png') |autoversion}}"
+                  alt="" />
+                </div>
+              </a>
+              <p>
+                Unser Bier ist erhältlich im
+                <a href="https://cafe-damascus.ch/">Café Damaskus</a>
+              </p>
+            </div>
+            <div class="getable">
+              <a href="https://www.instagram.com/">
+                <div class="getableicon insta">
+                  <img src= "{{url_for('static', filename='beerimages/icons8-instagram.svg') |autoversion}}"
+                  alt="" />
+                </div>
+              </a>
+              <p>Oder via Rampenverkauf</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter" id="impressions">
+          <div class="header">Impressions</div>
+          <div class="video-container">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/dv0dMo2sQqY"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="chapter"></div>
+        <div class="footer" id="contact">
+          <div class="adress">
+            <p>
+              Untere Brühlstrasse 11 <br />
+              4800 Zofingen <br />
+              <br />
+            </p>
+            <a href="mailto:info@bierkultur.beer">info@bierkultur.beer</a>
+          </div>
+          <a id="insta" href="https://www.instagram.com/">
+            <div class="instagram">
+              <img src= "{{url_for('static', filename='beerimages/icons8-instagram.svg') |autoversion}}"
+              alt="" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
