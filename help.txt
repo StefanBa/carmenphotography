@@ -1,3 +1,5 @@
+sudo apt update && sudo apt upgrade
+
 cd C:\Users\stefan\Documents\GitHub\carmenphotography
 venv\Scripts\activate
 python __init__.py
