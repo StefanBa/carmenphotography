@@ -7,8 +7,7 @@
     <title>Bierkultur</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/beerstyle.css') |autoversion}}" />
-    <script src="{{ url_for('static', filename='js/beerview.js') |autoversion}}"></script>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -291,5 +290,7 @@
         </div>
       </div>
     </div>
+    <script src="{{ url_for('static', filename='js/beerview.js') |autoversion}}" defer></script>
+
   </body>
 </html>

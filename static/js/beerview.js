@@ -17,6 +17,7 @@ let mobileBackgroundResize = true;
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
+        console.log("clicked")
         const offset = button.dataset.carouselButton === "next" ? 1 : -1
         console.log("offset: ", offset)
         const slides = document.querySelector("[data-slides]")
